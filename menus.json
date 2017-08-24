@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Welcome",
+        "pages": [
+            {
+                "page": "index",
+                "title": "Getting Started"
+            },
+            {
+                "page": "objects",
+                "title": "Object Reference"
+            }
+        ]
+    },
+    {
+        "title": "API Reference",
+        "pages": [
+            {
+                "page": "positions",
+                "title": "GET /positions"
+            },
+            {
+                "page": "positions_body",
+                "title": "GET /positions/<body_name>"
+            }
+        ]
+    }
+]
