@@ -5,21 +5,32 @@
             {
                 "page": "index",
                 "title": "Getting Started"
-            },
-            {
-                "page": "objects",
-                "title": "Object Reference"
+            }, {
+                "page": "solar_system_bodies",
+                "title": "Solar System Bodies"
+            }, {
+                "page": "tabular_responses",
+                "title": "Tabular Responses"
             }
         ]
-    },
-    {
+    }, {
+        "title": "Request Parameters",
+        "pages": [
+            {
+                "page": "observer_parameters",
+                "title": "Observer"
+            }, {
+                "page": "date_range_parameters",
+                "title": "Date Range"
+            }
+        ]
+    }, {
         "title": "API Reference",
         "pages": [
             {
                 "page": "positions",
                 "title": "GET /positions"
-            },
-            {
+            }, {
                 "page": "positions_body",
                 "title": "GET /positions/<body_name>"
             }
