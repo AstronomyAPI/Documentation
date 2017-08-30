@@ -1,21 +1,16 @@
 ## Positions
 
-This endpoint will return the position of solar system bodies for a given range of dates, for the given earth coordinates.
+This endpoint will return the position of Solar System bodies for a given range of dates, for the given Earth coordinates.
 
     GET /positions 
 
 
 The following parameters are required to be sent in the request.
 
-|| **Parameter** || **Description** ||
-|| lon || Longitude of the observer's location ||
-|| lat || Latitude of the observer's location ||
-|| from_year || Numeric value of the start date year ||
-|| from_month || Numeric value of the end date year ||
-|| from_day || Numeric value of the start date day ||
-|| to_year || Numeric value of the to date day ||
-|| to_month || Numeric value of the start date month ||
-|| to_day || Numeric value of the to date month ||
+[Observer Parameters](/documentation/observer_parameters)
+
+[Date Range Parameters](/documentation/date_range_parameters)
+
 
 *Sample Response*
 
@@ -143,6 +138,13 @@ The following parameters are required to be sent in the request.
                     "id": "mercury",
                     "name": "Mercury"
                 }
+                
+                ...
+                ...
+                ...
+                ...
+                ...
+                ...
             ]
         }
     }
