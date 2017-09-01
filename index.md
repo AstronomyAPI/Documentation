@@ -12,6 +12,8 @@ You will use the `Application ID` and the `Application Secret` to authenticate t
 
 You can view your `Application ID and the Secret` later, by clicking the `"View Application"` button for the specific application on the [dashboard](/dashboard).
 
+> If you're using Javascript to make API calls make sure you enter the same domain you use to make requests, in to the `domain` field of the `"Create New Application"` form. Astronomy API responses sends a `Access-Control-Allow-Origin` header with the domain you entered preventing other websites from reusing your JWT.
+
 ### Authentication
 
     GET /auth?app_id=<app_id>&app_secret=<app_secret>
