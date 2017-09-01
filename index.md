@@ -1,6 +1,6 @@
 ## Getting Started
 
-Welcome to **Astronomy API**, a web API for retreiving astronomical information.
+Welcome to **Astronomy API**, a web API for retrieving astronomical information.
 
 ### Obtaining An Application ID and a Secret
 
