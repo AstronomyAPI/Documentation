@@ -1,0 +1,65 @@
+.app-nav {
+  position: fixed;
+  padding: 15px 0;
+}
+.app-nav.no-badge,
+.app-nav {
+  margin: 0 !important;
+}
+.navbar {
+  padding: 15px;
+  background-color: #4ea7a4 !important;
+}
+.navbar .navbar-brand .brand {
+  font-family: Comfortaa;
+  font-size: 1.25rem;
+}
+.navbar .navbar-brand .brand strong {
+  color: #d7ce13;
+}
+.navbar .navbar-brand .brand span {
+  font-size: 0.5em;
+}
+.navbar .nav-link {
+  color: hsla(0, 0%, 100%, 0.5);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:active,
+.navbar .nav-link:focus {
+  color: #fff;
+}
+
+main,
+.sidebar {
+  margin-top: 5rem;
+}
+.markdown-section code {
+  color: #d49254;
+}
+.sidebar ul li.active > a,
+.markdown-section a {
+  color: #4ea7a4;
+}
+.section-link code {
+  padding: 2px 5px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.anchor code {
+  color: #fff;
+  font-size: 15px;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.section-link code.get,
+.anchor code.get {
+  background: #00b5ad;
+}
+.section-link code.post,
+.anchor code.post {
+  background: #e8ac3e;
+}
+.sidebar-toggle-button {
+  display: none !important;
+}

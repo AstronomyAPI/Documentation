@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Documentation - Free To Use, Astronomy API For Developers</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa"
+    rel="stylesheet" / >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"
+      integrity="sha256-/ykJw/wDxMa0AQhHDYfuMEwVb4JHMx9h4jD4XvHqVzU="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+        <a href="http://astronomyapi.com" class="navbar-brand">
+          <img src="/astronomy_api_logo.png" class="" />
+          <span class="brand"
+            >Astronomy <strong>API</strong> <span>Beta</span></span
+          >
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://astronomyapi.com/dashboard"
+              >Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="app"></div>
+    <script src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
+
+    <script>
+      window.$docsify = {
+        basePath: "/v1/documentation/",
+        auto2top: true,
+        topMargin: 150,
+        plugins: [
+          function (hook) {
+            function addColorClass(element) {
+              switch (element.innerHTML) {
+                case "GET":
+                  element.classList.add("get");
+                  break;
+                case "POST":
+                  element.classList.add("post");
+                  break;
+              }
+            }
+
+            hook.ready(function (html) {
+              const links = document.querySelectorAll(".section-link");
+
+              links.forEach((link) => {
+                const code = link.querySelector("code");
+                if (code) {
+                  addColorClass(code);
+                }
+              });
+            });
+
+            hook.doneEach(function (html) {
+              const links = document.querySelectorAll(".anchor");
+
+              links.forEach((link) => {
+                const code = link.querySelector("code");
+                if (code) {
+                  addColorClass(code);
+                }
+              });
+            });
+          },
+        ],
+      };
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-104514864-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-104514864-1");
+    </script>
+  </body>
+</html>
