@@ -193,7 +193,7 @@ curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positi
 
 _Sample Response_
 
-[Download sample response as a json file](https://docs.astronomyapi/v2/positions.response.json)
+[Download sample response as a json file](https://docs.astronomyapi.com/v2/positions.response.json)
 
 ```
 {
