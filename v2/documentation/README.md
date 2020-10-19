@@ -147,6 +147,13 @@ For more information on how to render this type of data refer to the [samples re
 
 Returns a list of bodies available to be queried with.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' \
+--header 'Authorization: Basic xxx'
+```
+
 _Sample Response_
 
 ```
@@ -177,7 +184,16 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 _Sample Response_
+
+[Download sample response as a json file](https://docs.astronomyapi/v2/positions.response.json)
 
 ```
 {
@@ -1115,6 +1131,13 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/sun?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 _Sample Response_
 
 ```
@@ -1233,6 +1256,13 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/moon?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 ### GET /api/v2/bodies/positions/mercury
 
 Returns properties of Mercury for the given date range in tabular format.
@@ -1240,6 +1270,13 @@ Returns properties of Mercury for the given date range in tabular format.
 _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
+
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/mercury?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
 
 ### GET /api/v2/bodies/positions/venus
 
@@ -1249,6 +1286,13 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/venus?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 ### GET /api/v2/bodies/positions/mars
 
 Returns properties of Mars for the given date range in tabular format.
@@ -1256,6 +1300,13 @@ Returns properties of Mars for the given date range in tabular format.
 _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
+
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/mars?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
 
 ### GET /api/v2/bodies/positions/jupiter
 
@@ -1265,6 +1316,13 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/jupiter?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 ### GET /api/v2/bodies/positions/saturn
 
 Returns properties of Saturn for the given date range in tabular format.
@@ -1272,6 +1330,13 @@ Returns properties of Saturn for the given date range in tabular format.
 _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
+
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/saturn?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
 
 ### GET /api/v2/bodies/positions/uranus
 
@@ -1281,6 +1346,13 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/uranus?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 ### GET /api/v2/bodies/positions/neptune
 
 Returns properties of Neptune for the given date range in tabular format.
@@ -1289,6 +1361,13 @@ _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
 
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/neptune?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
+
 ### GET /api/v2/bodies/positions/pluto
 
 Returns properties of Pluto for the given date range in tabular format.
@@ -1296,3 +1375,9 @@ Returns properties of Pluto for the given date range in tabular format.
 _Query Params_
 
 [Observer Parameters](?id=observer-parameters) must be passed as query parameters.
+_Sample Request_
+
+```
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies/positions/pluto?latitude=33.775867&longitude=-84.39733&elevation=1000&from_date=2017-12-20&to_date=2017-12-21&time=08:00:00' \
+--header 'Authorization: Basic xxx'
+```
