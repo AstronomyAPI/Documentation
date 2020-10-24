@@ -11,10 +11,6 @@
 
 * [Bodies](endpoints/bodies.md)
 
-## API  v1 \(deprecated\)
-
-* [README](api-v1-deprecated/documentation.md)
-
 ## Links
 
 * [Sample code on Github](https://github.com/AstronomyAPI/Samples)
