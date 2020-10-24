@@ -11,7 +11,3 @@
 
 * [Bodies](endpoints/bodies.md)
 
-## API  v1 \(deprecated\)
-
-* [README](api-v1-deprecated/documentation.md)
-
