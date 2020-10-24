@@ -1,3 +1,7 @@
+---
+description: Body entities returned from the API consists of the following properties.
+---
+
 # Body properties
 
 Body entities returned from the API consists of the following properties.
