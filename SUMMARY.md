@@ -17,6 +17,6 @@
 
 ## Links
 
-* [Samples code on Github](https://github.com/AstronomyAPI/Samples)
+* [Sample code on Github](https://github.com/AstronomyAPI/Samples)
 * [Back to Dashboard](https://astronomyapi.com/dashboard)
 
