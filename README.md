@@ -1,6 +1,36 @@
 # Getting Started
 
-This repository contains the documentation for the Astronomy API.
+Welcome to **Astronomy API**, a web API for retrieving astronomical information.
 
-[docs.astronomyapi.com](https://docs.astronomyapi.com)
+## Obtaining An Application ID and a Secret
+
+To make API calls, you will first need to create an account. Go to the [Signup](http://astronomyapi.com/auth/signup) page to create your free account.
+
+After creating an account, you must obtain an `Application ID` and an `Application Secret` key by clicking the `"Create Application"` button from your dashboard. You will be directed to the view application page for the application you just created.
+
+The `Application Secret` is visible to you only once during application creation. Write it down somewhere because there's no way to retrieve it back.
+
+You will use the `Application ID` and the `Application Secret` to authenticate the Astronomy API with Basic Authentication.
+
+You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
+
+> If you're using Javascript to make API calls make sure you enter the same domain you use to make requests, in to the `domain` field of the `"Create New Application"` form. Astronomy API responses sends a `Access-Control-Allow-Origin` header with the domain you entered preventing other websites from reusing your JWT.
+
+## Basic Authentication
+
+When making API calls to endpoints which require authentication, you must use the credentials obtained above to create a hash. The algorithm to create the hash is very simple. Below is the implementation in PHP.
+
+`$hash = base64_encode("$applicationId:$applicationSecret");`
+
+The generated hash must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
+
+`'Authorization: Basic <hash>'`
+
+In an event of an authentication failure, a `403 Forbidden` response will be sent to you. Successful requests always respond an HTTP code `200`.
+
+### Sample curl request
+
+`curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' \ --header 'Authorization: Basic <hash>' \\`
+
+## 
 
