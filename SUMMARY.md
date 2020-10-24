@@ -5,6 +5,7 @@
   * [Body properties](requests-and-response/body-properties.md)
   * [Observer Parameters](requests-and-response/observer-parameters.md)
   * [Tabular Responses](requests-and-response/tabular-responses.md)
+  * [Error Responses](requests-and-response/error-responses.md)
 * [Changelog](changelog.md)
 
 ## API v2 Reference <a id="endpoints"></a>
