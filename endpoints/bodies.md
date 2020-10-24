@@ -1,5 +1,7 @@
 # Bodies
 
+Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer parameters](../requests-and-response/observer-parameters.md) as query parameters.
+
 {% api-method method="get" host="https://api.astronomyapi.com" path="/api/v2/bodies" %}
 {% api-method-summary %}
 Get available bodies
@@ -59,18 +61,18 @@ Returns a iterable list of bodies and their properties in tabular format.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
+{% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="latitude" type="string" required=false %}
+{% api-method-parameter name="latitude" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="longitude" type="string" required=false %}
+{% api-method-parameter name="longitude" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
@@ -78,15 +80,15 @@ Returns a iterable list of bodies and their properties in tabular format.
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="from\_date" type="string" required=false %}
+{% api-method-parameter name="from\_date" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="to\_date" type="string" required=false %}
+{% api-method-parameter name="to\_date" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="time" type="string" required=false %}
+{% api-method-parameter name="time" type="string" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
@@ -1042,17 +1044,23 @@ Returns properties of the given body for the given date range in tabular format.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-
+{% api-method-parameter name="body" type="string" required=true %}
+ID of the body
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
-{% api-method-parameter name="latitude" type="string" required=false %}
+{% api-method-parameter name="latitude" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="longitude" type="string" required=false %}
+{% api-method-parameter name="longitude" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
@@ -1060,15 +1068,15 @@ Returns properties of the given body for the given date range in tabular format.
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="from\_date" type="string" required=false %}
+{% api-method-parameter name="from\_date" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="to\_date" type="string" required=false %}
+{% api-method-parameter name="to\_date" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="time" type="string" required=false %}
+{% api-method-parameter name="time" type="string" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
