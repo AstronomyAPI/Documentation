@@ -15,3 +15,8 @@
 
 * [README](api-v1-deprecated/documentation.md)
 
+## Links
+
+* [Samples code on Github](https://github.com/AstronomyAPI/Samples)
+* [Back to Dashboard](https://astronomyapi.com/dashboard)
+
