@@ -1,6 +1,6 @@
 # Body properties
 
-Body entities returned from the API consists of the following properties 
+Body entities returned from the API consists of the following properties
 
 | Section | Subsection | Description |
 | :--- | :--- | :--- |
@@ -14,6 +14,4 @@ Body entities returned from the API consists of the following properties
 | extraInfo | - | Other information relating to the body |
 |  | elongation | Angular separation between the Sun and the planet, with Earth as the reference point |
 |  | magnitude | Apparent magnitude of the object |
-
-## 
 

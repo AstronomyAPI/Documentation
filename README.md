@@ -32,5 +32,3 @@ In an event of an authentication failure, a `403 Forbidden` response will be sen
 
 `curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' \ --header 'Authorization: Basic <hash>' \\`
 
-## 
-

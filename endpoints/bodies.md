@@ -24,7 +24,7 @@ Returns a list of bodies available to be queried with.
 Cake successfully retrieved.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "data": {
         "bodies": [
@@ -98,7 +98,7 @@ Returns a iterable list of bodies and their properties in tabular format.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "data": {
         "dates": {
@@ -1030,8 +1030,6 @@ Returns a iterable list of bodies and their properties in tabular format.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 {% api-method method="get" host="https://api.astronomyapi.com" path="/api/v2/bodies/positions/:body" %}
 {% api-method-summary %}
 Get body positions
@@ -1082,7 +1080,7 @@ Returns properties of the given body for the given date range in tabular format.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "data": {
         "dates": {
@@ -1193,6 +1191,4 @@ Returns properties of the given body for the given date range in tabular format.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 
