@@ -1,3 +1,9 @@
+---
+description: >-
+  When requesting for location and/or date-time related data, Observer
+  parameters must be sent in the request.
+---
+
 # Observer Parameters
 
 Observer Parameters include the current observers location and other information.

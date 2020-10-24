@@ -1,3 +1,9 @@
+---
+description: >-
+  Plants, Sun and Moon entities respond with common object properties. This page
+  describes what to expect in the response.
+---
+
 # Body properties
 
 Body entities returned from the API consists of the following properties.

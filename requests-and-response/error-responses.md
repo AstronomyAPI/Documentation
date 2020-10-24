@@ -1,3 +1,7 @@
+---
+description: Common error responses.
+---
+
 # Error Responses
 
 Error response from the API should return a JSON object with the key `error` describing the nature of the error. A request validation failure will cause a `422` http code to be produced.
