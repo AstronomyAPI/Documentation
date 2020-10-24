@@ -14,21 +14,33 @@ You will use the `Application ID` and the `Application Secret` to authenticate t
 
 You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
 
-> If you're using Javascript to make API calls make sure you enter the same domain you use to make requests, in to the `domain` field of the `"Create New Application"` form. Astronomy API responses sends a `Access-Control-Allow-Origin` header with the domain you entered preventing other websites from reusing your JWT.
-
 ## Basic Authentication
 
-When making API calls to endpoints which require authentication, you must use the credentials obtained above to create a hash. The algorithm to create the hash is very simple. Below is the implementation in PHP.
+When making API calls to endpoints which require authentication, you must use the credentials obtained above to create a hash. The algorithm to create the hash is very simple. Below are implementations on several commonly used languages.
 
-`$hash = base64_encode("$applicationId:$applicationSecret");`
+#### JS
+
+```typescript
+const hash = btoa(`${applicationId}:${applicationSecret}`);
+```
+
+#### PHP
+
+```php
+$hash = base64_encode("$applicationId:$applicationSecret");
+```
 
 The generated hash must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
 
-`'Authorization: Basic <hash>'`
+```text
+'Authorization: Basic <hash>'
+```
 
-In an event of an authentication failure, a `403 Forbidden` response will be sent to you. Successful requests always respond an HTTP code `200`.
+In an event of an authentication failure, a `403 Forbidden` response will be returned to you. Successful requests always respond an HTTP code `200`.
 
 ### Sample curl request
 
-`curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' \ --header 'Authorization: Basic <hash>' \\`
+```bash
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' \ --header 'Authorization: Basic <hash>' \\
+```
 
