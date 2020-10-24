@@ -1,3 +1,9 @@
+---
+description: >-
+  Get Planets, Sun and Moon positions for given latitude, longitude and
+  date/time.
+---
+
 # Bodies
 
 Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer parameters](../requests-and-response/observer-parameters.md) as query parameters.
