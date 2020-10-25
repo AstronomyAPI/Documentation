@@ -14,6 +14,10 @@ You will use the `Application ID` and the `Application Secret` to authenticate t
 
 You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
 
+{% hint style="info" %}
+Be sure to set the origin to the domain of the website if you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
+{% endhint %}
+
 ## Basic Authentication
 
 When making API calls to endpoints which require authentication, you must use the credentials obtained above to create a hash. The algorithm to create the hash is very simple. Below are implementations on several commonly used languages.
