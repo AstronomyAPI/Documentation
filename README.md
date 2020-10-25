@@ -15,7 +15,7 @@ You will use the `Application ID` and the `Application Secret` to authenticate t
 You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
 
 {% hint style="info" %}
-Be sure to set the origin to the domain of the website if you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
+Be sure to set the O`rigin` to the domain of the website when creating an application. If you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
 {% endhint %}
 
 ## Basic Authentication
