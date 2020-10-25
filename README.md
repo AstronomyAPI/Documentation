@@ -2,7 +2,7 @@
 
 Welcome to **Astronomy API**, a web API for retrieving astronomical information.
 
-## Obtaining An Application ID and a Secret
+## Obtaining an Application ID and a Secret
 
 To make API calls, you will first need to create an account. Go to the [Signup](http://astronomyapi.com/auth/signup) page to create your free account.
 
