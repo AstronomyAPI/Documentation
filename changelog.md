@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.0 - 2020-10-27
+
+### Add
+
+* Added star chart generation
+
 ## 2.1.1 - 2020-10-23
 
 ### Fix
