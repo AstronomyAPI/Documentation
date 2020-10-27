@@ -89,7 +89,7 @@ To generate an image of an area in the sky, set the `type` to `area`, then pass 
 
 ```typescript
 // Note how this request does not have the field `style` 
-// The API will use the deault style
+// The API will use the default style
 {
     "observer": {
         "latitude": "33.775867",
