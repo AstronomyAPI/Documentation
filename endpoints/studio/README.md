@@ -47,7 +47,7 @@ Cake successfully retrieved.
 ```typescript
 {
  "data": {
-     "pngUrl": "https://widgets.astronomyapi.com/star-chart/generated/1234567890.png"
+     "imageUrl": "https://widgets.astronomyapi.com/star-chart/generated/1234567890.png"
   }
 }
 ```
