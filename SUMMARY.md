@@ -5,15 +5,19 @@
   * [Body properties](requests-and-response/body-properties.md)
   * [Observer Parameters](requests-and-response/observer-parameters.md)
   * [Tabular Responses](requests-and-response/tabular-responses.md)
+  * [Error Responses](requests-and-response/error-responses.md)
 * [Changelog](changelog.md)
 
 ## API v2 Reference <a id="endpoints"></a>
 
 * [Bodies](endpoints/bodies.md)
+* [Studio](endpoints/studio/README.md)
+  * [Styles](endpoints/studio/styles.md)
 
-## API  v1 \(deprecated\)
+## Links
 
-* [README](api-v1-deprecated/documentation.md)
+* [Sample code on Github](https://github.com/AstronomyAPI/Samples)
+* [Back to Dashboard](https://astronomyapi.com/dashboard)
 
 ## Links
 

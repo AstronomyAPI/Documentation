@@ -1,3 +1,9 @@
+---
+description: >-
+  Plants, Sun and Moon entities respond with common object properties. This page
+  describes what to expect in the response.
+---
+
 # Body properties
 
 Body entities returned from the API consists of the following properties.
@@ -14,6 +20,11 @@ Body entities returned from the API consists of the following properties.
 | extraInfo | - | Other information relating to the body |
 | - | elongation | Angular separation between the Sun and the planet, with Earth as the reference point |
 | - | magnitude | Apparent magnitude of the object |
+|  | phase | Phase of the body as an angle and a fraction. |
+
+{% hint style="info" %}
+`phase` property is available only to the Moon body 
+{% endhint %}
 
 #### Sample response object
 

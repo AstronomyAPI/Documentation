@@ -1,3 +1,7 @@
+---
+description: Most endpoints returns data in tabular format for easy template rendering.
+---
+
 # Tabular Responses
 
 Certain API endpoints might return you data in a tabular format, thus making it easier for you to render them in your template files.

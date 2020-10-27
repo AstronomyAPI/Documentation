@@ -2,7 +2,7 @@
 
 Welcome to **Astronomy API**, a web API for retrieving astronomical information.
 
-## Obtaining An Application ID and a Secret
+## Obtaining an Application ID and a Secret
 
 To make API calls, you will first need to create an account. Go to the [Signup](http://astronomyapi.com/auth/signup) page to create your free account.
 
@@ -13,6 +13,10 @@ The `Application Secret` is visible to you only once during application creation
 You will use the `Application ID` and the `Application Secret` to authenticate the Astronomy API with Basic Authentication.
 
 You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
+
+{% hint style="info" %}
+Be sure to set the O`rigin` to the domain of the website when creating an application. If you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
+{% endhint %}
 
 ## Basic Authentication
 

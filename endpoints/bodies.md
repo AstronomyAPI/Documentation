@@ -21,7 +21,7 @@ Returns a list of bodies available to be queried with.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-
+Basic &lt;hash&gt;
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -69,33 +69,33 @@ Returns a iterable list of bodies and their properties in tabular format.
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-
+Basic &lt;hash&gt;
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="latitude" type="string" required=true %}
-
+Latitude of the observer's location
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="longitude" type="string" required=true %}
-
+Longitude of the observer's location
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="elevation" type="string" required=false %}
-
+Elevation from the sea in Meters
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="from\_date" type="string" required=true %}
-
+Starting date as Date. 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="to\_date" type="string" required=true %}
-
+Ending date as Date
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="time" type="string" required=true %}
-
+Observer's time as Time
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -1057,33 +1057,33 @@ ID of the body
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-
+Basic &lt;hash&gt;
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="latitude" type="string" required=true %}
-
+Latitude of the observer's location
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="longitude" type="string" required=true %}
-
+Longitude of the observer's location
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="elevation" type="string" required=false %}
-
+Elevation from the sea in Meters
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="from\_date" type="string" required=true %}
-
+Starting date as Date.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="to\_date" type="string" required=true %}
-
+Ending date as Date
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="time" type="string" required=true %}
-
+Observer's time as Time
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
