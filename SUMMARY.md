@@ -11,6 +11,8 @@
 ## API v2 Reference <a id="endpoints"></a>
 
 * [Bodies](endpoints/bodies.md)
+* [Studio](endpoints/studio/README.md)
+  * [Styles](endpoints/studio/styles.md)
 
 ## Links
 
