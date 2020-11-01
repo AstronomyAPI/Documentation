@@ -12,7 +12,7 @@
 
 * [Bodies](endpoints/bodies.md)
 * [Studio](endpoints/studio/README.md)
-  * [Styles](endpoints/studio/styles.md)
+  * [Star Chart](endpoints/studio/star-chart.md)
 
 ## Links
 
