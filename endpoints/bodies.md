@@ -8,6 +8,8 @@ description: >-
 
 Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer parameters](../requests-and-response/observer-parameters.md) as query parameters.
 
+See [body properties](../requests-and-response/body-properties.md) for available properties for bodies.
+
 {% api-method method="get" host="https://api.astronomyapi.com" path="/api/v2/bodies" %}
 {% api-method-summary %}
 Get available bodies
@@ -62,7 +64,7 @@ Get all bodies positions
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Returns a iterable list of bodies and their properties in tabular format.
+Returns a iterable list of bodies and their properties in tabular format. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
