@@ -105,5 +105,5 @@ View object should specify which template to be used when rendering the image. C
 
 ![portrait-simple](../../.gitbook/assets/e86043757e0a337db6d529d42e6c67e9e832b104f75d92bf9e6a09fc4d44cc25.png)
 
-![portrait-simple](../../.gitbook/assets/f2968861e774a453f7826a48bb0c1f41c22693a3b58475cbec0435e97171d8e2.png)
+![landscape-simple](../../.gitbook/assets/f2968861e774a453f7826a48bb0c1f41c22693a3b58475cbec0435e97171d8e2.png)
 
