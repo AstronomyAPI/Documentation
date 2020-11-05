@@ -4,7 +4,7 @@ description: 'Generates a star chart with the given parameters, and returns the 
 
 # Star Chart
 
-{% api-method method="post" host="https://api.astronomyapi.com" path="/v2/studio/star-chart" %}
+{% api-method method="post" host="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" %}
 {% api-method-summary %}
 Generate star chart
 {% endapi-method-summary %}

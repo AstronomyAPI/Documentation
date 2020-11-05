@@ -13,6 +13,7 @@
 * [Bodies](endpoints/bodies.md)
 * [Studio](endpoints/studio/README.md)
   * [Star Chart](endpoints/studio/star-chart.md)
+  * [Moon Phase](endpoints/studio/moon-phase.md)
 
 ## Links
 
