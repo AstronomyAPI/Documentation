@@ -69,8 +69,8 @@ View object is used to configure the view of the rendered image. The view object
         "textColor": "red"
     },
     "observer": {
-        "latitude": "6",
-        "longitude": "79",
+        "latitude": 6.56774,
+        "longitude": 79.88956,
         "date": "2020-11-01"
     },
     "view": {

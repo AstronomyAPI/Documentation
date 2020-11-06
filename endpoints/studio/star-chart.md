@@ -68,8 +68,8 @@ The 3 letter constellation id is case sensitive, only lower case is allowed
 {
     "style": "inverted",
     "observer": {
-        "latitude": "33.775867",
-        "longitude": "-84.39733",
+        "latitude": 33.775867,
+        "longitude": -84.39733,
         "date": "2019-12-20"
     },
     "view": {
@@ -90,8 +90,8 @@ To generate an image of an area in the sky, set the `type` to `area`, then pass 
 // The API will use the default style
 {
     "observer": {
-        "latitude": "33.775867",
-        "longitude": "-84.39733",
+        "latitude": 33.775867,
+        "longitude": -84.39733,
         "date": "2019-12-20"
     },
     "view": {
@@ -99,8 +99,8 @@ To generate an image of an area in the sky, set the `type` to `area`, then pass 
         "parameters": {
             "position": {
                 "equatorial": {
-                    "rightAscension": "14.83",
-                    "declination": "-15.23"
+                    "rightAscension": 14.83,
+                    "declination": -15.23
                 }
             },
             "zoom": 3 //optional
