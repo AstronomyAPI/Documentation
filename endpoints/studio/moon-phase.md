@@ -1,3 +1,7 @@
+---
+description: Generate an image of the Moon based on the given parameters.
+---
+
 # Moon Phase
 
 {% api-method method="post" host="https://api.astronomyapi.com" path="/api/v2/studio/moon-phase" %}
