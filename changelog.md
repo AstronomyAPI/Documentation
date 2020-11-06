@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.1 - 2020-11-06
+
+### Fix
+
+* Improved/ fixed date time validation and some other number validations.
+
 ## 2.3.0 - 2020-11-06
 
 ### Add
