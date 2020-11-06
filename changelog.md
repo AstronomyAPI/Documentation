@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.3.0 - 2020-11-06
+
+### Add
+
+* Added moon phase generation
+
+### Fix
+
+* Fixed issue with time zone conversion
+* Fixed issue with exception handling and reporting
+
 ## 2.2.0 - 2020-10-27
 
 ### Add
