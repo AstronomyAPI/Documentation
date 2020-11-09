@@ -15,7 +15,7 @@ You will use the `Application ID` and the `Application Secret` to authenticate t
 You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
 
 {% hint style="info" %}
-Be sure to set the O`rigin` to the domain of the website when creating an application. If you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
+Be sure to set the `Origin` to the domain of the website when creating an application. If you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
 {% endhint %}
 
 ## Basic Authentication
@@ -37,7 +37,7 @@ $hash = base64_encode("$applicationId:$applicationSecret");
 The generated hash must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
 
 ```text
-'Authorization: Basic <hash>'
+"Authorization: Basic <hash>"
 ```
 
 In an event of an authentication failure, a `403 Forbidden` response will be returned to you. Successful requests always respond an HTTP code `200`.
