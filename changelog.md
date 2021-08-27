@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.0 - 2021-08-28
+
+### Improve
+
+* Improve performance for studio endpoints
+* improve performance for positions endpoints
+
 ## 2.3.1 - 2020-11-06
 
 ### Fix
