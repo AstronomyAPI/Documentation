@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.5.0 - 2021-10-26
+
+### Add
+
+* Added support for moon phase orientation
+
+## 2.4.0 -2021-09-09
+
+### Improve
+
+* System security update
+
 ## 2.3.0 - 2021-08-28
 
 ### Improve
@@ -73,6 +85,4 @@
 ### Added
 
 * Introduced planetary positions api
-
-
 

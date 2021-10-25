@@ -8,9 +8,9 @@ Error response from the API should return a JSON object with the key `error` des
 
 ### Sample validation error response
 
-The below response was caused by not providing the value for `latitude` parameter.
+The below response was caused by not providing the value for `latitude `parameter.
 
-```text
+```
  {
     "statusCode": 422,
     "errors": [
@@ -60,4 +60,3 @@ The below response was caused by not providing the value for `latitude` paramete
     ]
 }
 ```
-

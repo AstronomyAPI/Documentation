@@ -1,47 +1,55 @@
 ---
-description: 'Generates a star chart with the given parameters, and returns the url'
+description: Generates a star chart with the given parameters, and returns the url
 ---
 
 # Star Chart
 
-{% api-method method="post" host="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" %}
-{% api-method-summary %}
-Generate star chart
-{% endapi-method-summary %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" method="post" summary="Generate star chart" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
+Basic <hash>
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic &lt;hash&gt;
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="style" type="string" required=false %}
+{% swagger-parameter in="body" name="style" type="string" %}
 Style of the map to be generated. If not provided will use the default style. To see a demo of available styles see styles section on this page. 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="observer" type="object" required=true %}
-Observer object must contain the `latitude`, `longitude` and `date` of the observer.
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="observer" type="object" %}
+Observer object must contain the 
 
-{% api-method-parameter name="view" type="object" required=true %}
-View object is used to configure the view of the rendered image. The view object must contain a `type` and `parameters` object. Parameters object can vary based on the `type`.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+`latitude`
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
+, 
 
+`longitude`
+
+ and 
+
+`date`
+
+ of the observer.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="view" type="object" %}
+View object is used to configure the view of the rendered image. The view object must contain a 
+
+`type`
+
+ and 
+
+`parameters `
+
+object. Parameters object can vary based on the 
+
+`type`
+
+.
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Cake successfully retrieved." %}
 ```typescript
 {
  "data": {
@@ -49,10 +57,8 @@ Cake successfully retrieved.
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ### Rendering different views
 
@@ -126,6 +132,4 @@ To generate an image of an area in the sky, set the `type` to `area`, then pass 
 ### `red`
 
 ![](../../.gitbook/assets/9094a7b39b3ff6b06cf577ceb8f4c1cac3d2aa25fd07c74cb23f109ff32f5f59.png)
-
-
 
