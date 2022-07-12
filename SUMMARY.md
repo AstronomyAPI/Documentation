@@ -8,19 +8,14 @@
   * [Error Responses](requests-and-response/error-responses.md)
 * [Changelog](changelog.md)
 
-## API v2 Reference <a id="endpoints"></a>
+## API v2 Reference <a href="#endpoints" id="endpoints"></a>
 
 * [Bodies](endpoints/bodies.md)
 * [Studio](endpoints/studio/README.md)
-  * [Styles](endpoints/studio/styles.md)
+  * [Star Chart](endpoints/studio/star-chart.md)
+  * [Moon Phase](endpoints/studio/moon-phase.md)
 
 ## Links
 
 * [Sample code on Github](https://github.com/AstronomyAPI/Samples)
 * [Back to Dashboard](https://astronomyapi.com/dashboard)
-
-## Links
-
-* [Sample code on Github](https://github.com/AstronomyAPI/Samples)
-* [Back to Dashboard](https://astronomyapi.com/dashboard)
-

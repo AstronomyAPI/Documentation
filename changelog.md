@@ -1,5 +1,59 @@
 # Changelog
 
+## 2.6.0 - 2022-06-14
+
+### Add
+
+* Added request metrics graphs in dashboard
+
+## 2.5.1 - 2021-11-23
+
+### Update
+
+* Update image processing libraries
+
+## 2.5.0 - 2021-10-26
+
+### Add
+
+* Added support for moon phase orientation
+
+## 2.4.0 -2021-09-09
+
+### Improve
+
+* System security update
+
+## 2.3.0 - 2021-08-28
+
+### Improve
+
+* Improve performance for studio endpoints
+* improve performance for positions endpoints
+
+## 2.3.1 - 2020-11-06
+
+### Fix
+
+* Improved/ fixed date time validation and some other number validations.
+
+## 2.3.0 - 2020-11-06
+
+### Add
+
+* Added moon phase generation
+
+### Fix
+
+* Fixed issue with time zone conversion
+* Fixed issue with exception handling and reporting
+
+## 2.2.0 - 2020-10-27
+
+### Add
+
+* Added star chart generation
+
 ## 2.1.1 - 2020-10-23
 
 ### Fix
@@ -43,6 +97,4 @@
 ### Added
 
 * Introduced planetary positions api
-
-
 

@@ -6,11 +6,11 @@ description: Common error responses.
 
 Error response from the API should return a JSON object with the key `error` describing the nature of the error. A request validation failure will cause a `422` http code to be produced.
 
-#### Sample validation error response
+### Sample validation error response
 
 The below response was caused by not providing the value for `latitude` parameter.
 
-```text
+```
  {
     "statusCode": 422,
     "errors": [
@@ -60,4 +60,3 @@ The below response was caused by not providing the value for `latitude` paramete
     ]
 }
 ```
-

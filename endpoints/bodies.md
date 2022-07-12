@@ -8,31 +8,19 @@ description: >-
 
 Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer parameters](../requests-and-response/observer-parameters.md) as query parameters.
 
-{% api-method method="get" host="https://api.astronomyapi.com" path="/api/v2/bodies" %}
-{% api-method-summary %}
-Get available bodies
-{% endapi-method-summary %}
+See [body properties](../requests-and-response/body-properties.md) for available properties for bodies.
 
-{% api-method-description %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/bodies" method="get" summary="Get available bodies" %}
+{% swagger-description %}
 Returns a list of bodies available to be queried with.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic &lt;hash&gt;
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Basic <hash>
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 {
     "data": {
         "bodies": [
@@ -51,62 +39,44 @@ Cake successfully retrieved.
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://api.astronomyapi.com" path="/api/v2/bodies/positions" %}
-{% api-method-summary %}
-Get all bodies positions
-{% endapi-method-summary %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/bodies/positions" method="get" summary="Get all bodies positions" %}
+{% swagger-description %}
+Returns a iterable list of bodies and their properties in tabular format. 
+{% endswagger-description %}
 
-{% api-method-description %}
-Returns a iterable list of bodies and their properties in tabular format.
-{% endapi-method-description %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Basic <hash>
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic &lt;hash&gt;
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-query-parameters %}
-{% api-method-parameter name="latitude" type="string" required=true %}
+{% swagger-parameter in="query" name="latitude" type="string" required="true" %}
 Latitude of the observer's location
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="longitude" type="string" required=true %}
+{% swagger-parameter in="query" name="longitude" type="string" required="true" %}
 Longitude of the observer's location
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="elevation" type="string" required=false %}
+{% swagger-parameter in="query" name="elevation" type="string" %}
 Elevation from the sea in Meters
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="from\_date" type="string" required=true %}
+{% swagger-parameter in="query" name="from_date" type="string" required="true" %}
 Starting date as Date. 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="to\_date" type="string" required=true %}
+{% swagger-parameter in="query" name="to_date" type="string" required="true" %}
 Ending date as Date
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="time" type="string" required=true %}
+{% swagger-parameter in="query" name="time" type="string" required="true" %}
 Observer's time as Time
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 {
     "data": {
         "dates": {
@@ -1033,68 +1003,48 @@ Observer's time as Time
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://api.astronomyapi.com" path="/api/v2/bodies/positions/:body" %}
-{% api-method-summary %}
-Get body positions
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/bodies/positions/:body" method="get" summary="Get body positions" %}
+{% swagger-description %}
 Returns properties of the given body for the given date range in tabular format.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="body" type="string" required=true %}
+{% swagger-parameter in="path" name="body" type="string" required="true" %}
 ID of the body
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic &lt;hash&gt;
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Basic <hash>
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="latitude" type="string" required=true %}
+{% swagger-parameter in="query" name="latitude" type="string" required="true" %}
 Latitude of the observer's location
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="longitude" type="string" required=true %}
+{% swagger-parameter in="query" name="longitude" type="string" required="true" %}
 Longitude of the observer's location
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="elevation" type="string" required=false %}
+{% swagger-parameter in="query" name="elevation" type="string" %}
 Elevation from the sea in Meters
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="from\_date" type="string" required=true %}
+{% swagger-parameter in="query" name="from_date" type="string" required="true" %}
 Starting date as Date.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="to\_date" type="string" required=true %}
+{% swagger-parameter in="query" name="to_date" type="string" required="true" %}
 Ending date as Date
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="time" type="string" required=true %}
+{% swagger-parameter in="query" name="time" type="string" required="true" %}
 Observer's time as Time
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 {
     "data": {
         "dates": {
@@ -1201,8 +1151,5 @@ Observer's time as Time
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

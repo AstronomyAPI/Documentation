@@ -8,14 +8,14 @@ To make API calls, you will first need to create an account. Go to the [Signup](
 
 After creating an account, you must obtain an `Application ID` and an `Application Secret` key by clicking the `"Create Application"` button from your dashboard. You will be directed to the view application page for the application you just created.
 
-The `Application Secret` is visible to you only once during application creation. Write it down somewhere because there's no way to retrieve it back.
+The `Application Secret` is visible to you only once during application creation. Save it somewhere because there's no way to retrieve it back. If you lost your secret create a new application and delete the old application.
 
 You will use the `Application ID` and the `Application Secret` to authenticate the Astronomy API with Basic Authentication.
 
 You can view your `Application ID` later, by clicking the name of the specific application on the [dashboard](http://astronomyapi.com/dashboard).
 
 {% hint style="info" %}
-Be sure to set the O`rigin` to the domain of the website when creating an application. If you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide. 
+Be sure to set the `Origin` to the domain of the website when creating an application. If you're planning to use the API on a webpage. The API will respond with a `Access Allow Origin` header with the domain you provide.&#x20;
 {% endhint %}
 
 ## Basic Authentication
@@ -36,8 +36,8 @@ $hash = base64_encode("$applicationId:$applicationSecret");
 
 The generated hash must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
 
-```text
-'Authorization: Basic <hash>'
+```
+"Authorization: Basic <hash>"
 ```
 
 In an event of an authentication failure, a `403 Forbidden` response will be returned to you. Successful requests always respond an HTTP code `200`.
@@ -45,6 +45,6 @@ In an event of an authentication failure, a `403 Forbidden` response will be ret
 ### Sample curl request
 
 ```bash
-curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' \ --header 'Authorization: Basic <hash>' \\
+curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' 
+\ --header 'Authorization: Basic <hash>' \\
 ```
-
