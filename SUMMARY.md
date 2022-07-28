@@ -2,7 +2,8 @@
 
 * [Getting Started](README.md)
 * [Requests and Responses](requests-and-response/README.md)
-  * [Body properties](requests-and-response/body-properties.md)
+  * [Body Properties](requests-and-response/body-properties.md)
+  * [Search Result Properties](requests-and-response/body-properties-1.md)
   * [Observer Parameters](requests-and-response/observer-parameters.md)
   * [Tabular Responses](requests-and-response/tabular-responses.md)
   * [Error Responses](requests-and-response/error-responses.md)
@@ -14,6 +15,7 @@
 * [Studio](endpoints/studio/README.md)
   * [Star Chart](endpoints/studio/star-chart.md)
   * [Moon Phase](endpoints/studio/moon-phase.md)
+* [Search](endpoints/search.md)
 
 ## Links
 

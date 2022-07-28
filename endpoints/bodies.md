@@ -6,9 +6,9 @@ description: >-
 
 # Bodies
 
-Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer parameters](../requests-and-response/observer-parameters.md) as query parameters.
+Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer-parameters.md](../requests-and-response/observer-parameters.md "mention") as query parameters.
 
-See [body properties](../requests-and-response/body-properties.md) for available properties for bodies.
+See [body-properties.md](../requests-and-response/body-properties.md "mention") for available properties for bodies.
 
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/bodies" method="get" summary="Get available bodies" %}
 {% swagger-description %}
@@ -19,8 +19,8 @@ Returns a list of bodies available to be queried with.
 Basic <hash>
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="" %}
-```
+{% swagger-response status="200: OK" description="" %}
+```javascript
 {
     "data": {
         "bodies": [
@@ -75,8 +75,8 @@ Ending date as Date
 Observer's time as Time
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="" %}
-```
+{% swagger-response status="200: OK" description="" %}
+```javascript
 {
     "data": {
         "dates": {
@@ -1043,8 +1043,8 @@ Ending date as Date
 Observer's time as Time
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="" %}
-```
+{% swagger-response status="200: OK" description="Response for a request made with "sun" as the body" %}
+```javascript
 {
     "data": {
         "dates": {

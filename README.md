@@ -36,7 +36,7 @@ $hash = base64_encode("$applicationId:$applicationSecret");
 
 The generated hash must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
 
-```
+```markup
 "Authorization: Basic <hash>"
 ```
 
@@ -46,5 +46,5 @@ In an event of an authentication failure, a `403 Forbidden` response will be ret
 
 ```bash
 curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' 
-\ --header 'Authorization: Basic <hash>' \\
+\ --header 'Authorization: Basic <hash>' 
 ```

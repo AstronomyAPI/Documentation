@@ -4,31 +4,31 @@ description: >-
   describes what to expect in the response.
 ---
 
-# Body properties
+# Body Properties
 
 Body entities returned from the API consists of the following properties.
 
-| **Section** | **Subsection** | **Description**                                                                                                                                                         |
-| ----------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id          | -              | Unique identifier for the body                                                                                                                                          |
-| name        | -              | User friendly name for the body                                                                                                                                         |
-| distance    | -              | Distance object                                                                                                                                                         |
-| -           | fromEarth      | Distance from Earth in Kilometers (km) and Astronomical units (au)                                                                                                      |
-| position    | -              | Position object                                                                                                                                                         |
-| -           | horizonal      | Position object in horizontal coordinates. Object will return the values in Altitude and Azimuth (Alt/Az) format. Numerical and literal values are returned.            |
-| -           | equatorial     | Position object in equatorial coordinates. Object will return the values in Right Ascension and Declination (RA/Dec) format. Numerical and literal values are returned. |
-| extraInfo   | -              | Other information relating to the body                                                                                                                                  |
-| -           | elongation     | Angular separation between the Sun and the planet, with Earth as the reference point                                                                                    |
-| -           | magnitude      | Apparent magnitude of the object                                                                                                                                        |
-|             | phase          | Phase of the body as an angle and a fraction.                                                                                                                           |
+| **Section** | **Subsection** | **Data Type** | **Description**                                                                                                                                                         |
+| ----------- | -------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id          | -              | string        | Unique identifier for the body                                                                                                                                          |
+| name        | -              | string        | User friendly name for the body                                                                                                                                         |
+| distance    | -              | object        | Distance object                                                                                                                                                         |
+| -           | fromEarth      | object        | Distance from Earth in Kilometers (km) and Astronomical units (au)                                                                                                      |
+| position    | -              | object        | Position object                                                                                                                                                         |
+| -           | horizonal      | object        | Position object in horizontal coordinates. Object will return the values in Altitude and Azimuth (Alt/Az) format. Numerical and literal values are returned.            |
+| -           | equatorial     | object        | Position object in equatorial coordinates. Object will return the values in Right Ascension and Declination (RA/Dec) format. Numerical and literal values are returned. |
+| extraInfo   | -              | object        | Other information relating to the body                                                                                                                                  |
+| -           | elongation     | string        | Angular separation between the Sun and the planet, with Earth as the reference point                                                                                    |
+| -           | magnitude      | string        | Apparent magnitude of the object                                                                                                                                        |
+|             | phase          | object        | Phase of the body as an angle and a fraction.                                                                                                                           |
 
 {% hint style="info" %}
-`phase` property is available only to the Moon body&#x20;
+`phase` property is available only in the Moon body&#x20;
 {% endhint %}
 
 #### Sample response object
 
-```
+```javascript
 {
     "date": "2017-12-20T08:00:00.000Z",
     "id": "saturn",

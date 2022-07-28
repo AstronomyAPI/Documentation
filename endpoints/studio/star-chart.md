@@ -49,7 +49,7 @@ View object is used to configure the view of the rendered image. The view object
 .
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="" %}
+{% swagger-response status="200: OK" description="" %}
 ```typescript
 {
  "data": {
