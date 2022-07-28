@@ -8,7 +8,7 @@ Certain API endpoints might return you data in a tabular format, thus making it 
 
 You can get the `table` object from response object using `data.table`.
 
-```javascript
+```text
 {
     "data": {
         "dates": {
@@ -16,7 +16,7 @@ You can get the `table` object from response object using `data.table`.
             "to": "2016-12-22T23:59:59"
         },
         "observer": {
-            "location": {v
+            "location": {
                 "longitude": -84.39733,
                 "latitude": 33.775867,
                 "elevation": 1000
@@ -35,7 +35,7 @@ Each row object consists of a `cells` array and an `entry` object. The `entry` i
 
 For more information on how to render this type of data refer to the [samples repository](https://github.com/AstronomyAPI/Samples)
 
-```javascript
+```text
 {
     "header": [
         "Column 1",
@@ -84,3 +84,4 @@ For more information on how to render this type of data refer to the [samples re
     ]
 }
 ```
+

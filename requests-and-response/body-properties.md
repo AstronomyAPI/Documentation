@@ -4,7 +4,7 @@ description: >-
   describes what to expect in the response.
 ---
 
-# Body Properties
+# 🪐 Body Properties
 
 Body entities returned from the API consists of the following properties.
 
