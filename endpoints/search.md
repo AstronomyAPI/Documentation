@@ -3,11 +3,15 @@ description: Search for stars and deep space objects.
 layout: editorial
 ---
 
-# Search
+# 🔎 Search
+
+{% hint style="danger" %}
+This part of the documentation refers to a feature that's currently in development. The request and response may be changed without notice.
+{% endhint %}
 
 Search endpoint can be used to get information for stars and deep space objects.
 
-The response of this endpoint is an array of objects which is representing the results. Resulting items could be of object type star or a deep space object depending of the matching criteria.
+The response of this endpoint is an array of objects which is representing the results. The resulting items could be of object type star or a deep space object depending on the matching criteria.
 
 Star objects can be identified with the prefix `str_` in the id field while deep space objects will have the prefix `dso_`
 
