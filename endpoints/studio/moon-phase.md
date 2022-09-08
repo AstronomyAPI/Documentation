@@ -2,7 +2,7 @@
 description: Generate an image of the Moon based on the given parameters.
 ---
 
-# Moon Phase
+# 🌒 Moon Phase
 
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/moon-phase" method="post" summary="Generate Moon Phase" %}
 {% swagger-description %}
@@ -48,11 +48,11 @@ Observer object must contain the
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="view" type="object" required="true" %}
-View object is used to configure the view of the rendered image. The view object must contain a 
+View object is used to configure the view of the rendered image. The view object must contain a `type` object.&#x20;
 
-`type`
 
- object. 
+
+`orientation` specifies which side of the moon should be up depending on the hemisphere you live in the world. This parameter is optional. If not provided AstronomyAPI will determine the values automatically.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
