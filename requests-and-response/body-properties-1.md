@@ -57,10 +57,12 @@ The following properties are returned in the search results objects returned fro
                     "catalogId": "LBN"
                 },
                 {
-                    "name": "Crab Nebula"
+                    "name": "Crab Nebula",
+                    "catalogId": null
                 },
                 {
-                    "name": "Taurus A"
+                    "name": "Taurus A",
+                    "catalogId": null
                 },
                 {
                     "name": "M 1",
