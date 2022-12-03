@@ -1,10 +1,16 @@
-# Changelog
+# 📕 Changelog
+
+## 2.10.0 - 2022-09-09
+
+### Add
+
+* Added search endpoint for searching objects
 
 ## 2.6.0 - 2022-06-14
 
 ### Add
 
-* Added request metrics graphs in dashboard
+* Added request metrics graphs in the dashboard
 
 ## 2.5.1 - 2021-11-23
 

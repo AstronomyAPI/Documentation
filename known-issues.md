@@ -6,7 +6,11 @@ description: This section describes known issues with the system
 
 #### Endpoint timeout
 
-You may experience endpoint timeouts - specifically in the studio endpoints. Retrying the request with the same request parameters will work.
+You may experience endpoint timeouts (`HTTP 504`) - specifically in the studio endpoints. Retrying the request with the same request parameters will work.
+
+#### Too many requests
+
+Due to high resource consumption, you may experience too many requests (`HTTP 429`). Rate limiting is enforced on all consumers based on their IP and overall API consumption. Retrying after some time will resolve this error. If you require high API usage please send an email to contact@astronomyapi.com.
 
 #### Coordinates are slightly different from other astronomical software
 
