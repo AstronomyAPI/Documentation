@@ -4,7 +4,7 @@ description: >-
   date/time.
 ---
 
-# Bodies
+# 🪐 Bodies
 
 Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer-parameters.md](../requests-and-response/observer-parameters.md "mention") as query parameters.
 

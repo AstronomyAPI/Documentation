@@ -6,10 +6,6 @@ description: >-
 
 # 🔎 Search Result Properties
 
-{% hint style="danger" %}
-This part of the documentation refers to a feature that's currently in development. The request and response may be changed without notice.
-{% endhint %}
-
 The following properties are returned in the search results objects returned from the API.&#x20;
 
 | **Section**         | **Subsection** | **Data Type** | **Description**                                                                                                                                                         |
@@ -57,10 +53,12 @@ The following properties are returned in the search results objects returned fro
                     "catalogId": "LBN"
                 },
                 {
-                    "name": "Crab Nebula"
+                    "name": "Crab Nebula",
+                    "catalogId": null
                 },
                 {
-                    "name": "Taurus A"
+                    "name": "Taurus A",
+                    "catalogId": null
                 },
                 {
                     "name": "M 1",
