@@ -23,5 +23,6 @@
 
 ## Links
 
+* [demo.astronomyapi.com](http://demo.astronomyapi.com)
 * [Sample code on Github](https://github.com/AstronomyAPI/Samples)
 * [Back to Dashboard](https://astronomyapi.com/dashboard)

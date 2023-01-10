@@ -1,5 +1,11 @@
 # 📕 Changelog
 
+## 2.11.0 - 2022-12-31
+
+### Add
+
+* Introducing demo.astronomyapi.com
+
 ## 2.10.0 - 2022-09-09
 
 ### Add

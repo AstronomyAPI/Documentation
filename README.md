@@ -1,4 +1,4 @@
-# Getting Started
+# 🚀 Getting Started
 
 Welcome to **Astronomy API**, a web API for retrieving astronomical information.
 
@@ -48,3 +48,5 @@ In an event of an authentication failure, a `403 Forbidden` response will be ret
 curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' 
 \ --header 'Authorization: Basic <hash>' 
 ```
+
+For code samples and demos go to [demo.astronomyapi.com](http://demo.astronomyapi.com)
