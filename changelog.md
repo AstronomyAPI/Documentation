@@ -4,6 +4,7 @@
 
 ### Add
 
+* Update dependency packages
 * Introducing demo.astronomyapi.com
 
 ## 2.10.0 - 2022-09-09
