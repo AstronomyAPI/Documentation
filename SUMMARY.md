@@ -17,6 +17,7 @@
   * [🔎 Search Result Properties](requests-and-response/body-properties-1.md)
   * [🔭 Observer Parameters](requests-and-response/observer-parameters.md)
   * [🗓 Tabular Responses](requests-and-response/tabular-responses.md)
+  * [🔢 Row Responses](requests-and-response/tabular-responses-1.md)
   * [🚩 Error Responses](requests-and-response/error-responses.md)
 * [⚠ Known Issues](known-issues.md)
 * [📕 Changelog](changelog.md)

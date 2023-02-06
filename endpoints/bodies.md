@@ -75,6 +75,20 @@ Ending date as Date
 Observer's time as Time
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="output" type="string" %}
+Output format. 
+
+`row`
+
+ or 
+
+`table`
+
+. Default is 
+
+`table`
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ```javascript
 {
@@ -1041,6 +1055,20 @@ Ending date as Date
 
 {% swagger-parameter in="query" name="time" type="string" required="true" %}
 Observer's time as Time
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="output" type="string" %}
+Output format. 
+
+`row`
+
+ or 
+
+`table`
+
+. Default is 
+
+`table`
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Response for a request made with "sun" as the body" %}

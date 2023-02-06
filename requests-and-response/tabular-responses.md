@@ -1,14 +1,14 @@
 ---
-description: Most endpoints returns data in tabular format for easy template rendering.
+description: Some endpoints return data in tabular format for easy template rendering.
 ---
 
-# Tabular Responses
+# 🗓 Tabular Responses
 
 Certain API endpoints might return you data in a tabular format, thus making it easier for you to render them in your template files.
 
 You can get the `table` object from response object using `data.table`.
 
-```text
+```javascript
 {
     "data": {
         "dates": {
@@ -29,13 +29,13 @@ You can get the `table` object from response object using `data.table`.
 }
 ```
 
-A typical `table` object response will include a `header` and `rows`. The `header` contains the column names, while the `rows` contains the row data.
+A typical `table` object response will include a `header` and `rows`. The `header` contains the column names, while the `rows` contain the row data.
 
-Each row object consists of a `cells` array and an `entry` object. The `entry` is the label for current row. While cells are the values for the corresponding columns of the row.
+Each row object consists of a `cells` array and an `entry` object. The `entry` is the label for the current row. While cells are the values for the corresponding columns of the row.
 
 For more information on how to render this type of data refer to the [samples repository](https://github.com/AstronomyAPI/Samples)
 
-```text
+```javascript
 {
     "header": [
         "Column 1",
@@ -84,4 +84,3 @@ For more information on how to render this type of data refer to the [samples re
     ]
 }
 ```
-

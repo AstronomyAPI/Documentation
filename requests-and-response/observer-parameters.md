@@ -4,9 +4,9 @@ description: >-
   parameters must be sent in the request.
 ---
 
-# Observer Parameters
+# 🔭 Observer Parameters
 
-Observer Parameters include the current observers location and other information. Casing of the properties change from camel case to snake case when doing a GET request.
+Observer Parameters include the current observer's location and other information. The casing of the properties changes from camel case to snake case when doing a GET request.
 
 | **Parameter**         | **Required** | **Description**                                                          | Sample Value |
 | --------------------- | :----------: | ------------------------------------------------------------------------ | ------------ |
@@ -17,10 +17,6 @@ Observer Parameters include the current observers location and other information
 | to\_date / toDate     |      Yes     | Ending date as Date. When doing a GET request to\_date must be used.     | 2018-12-22   |
 | time                  |      Yes     | Observer's time as Time                                                  | 08:00:00     |
 
-{% hint style="info" %}
-Maximum day span that could be requested from the API is 30 days.
-{% endhint %}
-
 ## Time and Timezones
 
-Astronomy API treats the time requested, as the observer's time. It finds the timezone of the user based on the location specified by `longitude` and `latitude`. The returned times will be as same as the time zone requested with.
+Astronomy API treats the time requested, as the observer's time. It finds the timezone of the user based on the location specified by `longitude` and `latitude`. The returned times will be as same as the time zone requested.

@@ -2,7 +2,7 @@
 description: Generates a star chart with the given parameters, and returns the url
 ---
 
-# Star Chart
+# ✨ Star Chart
 
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" method="post" summary="Generate star chart" %}
 {% swagger-description %}
@@ -64,10 +64,10 @@ View object is used to configure the view of the rendered image. The view object
 
 #### Constellation
 
-To generate an image of a constellation the `type` in the `view` object must be set to `constellation`. The 3 letter id of the constellation must be passed in the parameters for the view object.
+To generate an image of a constellation the `type` in the `view` object must be set to `constellation`. The 3 letter ID of the constellation must be passed in the parameters for the view object. For a complete list of constellation IDs see&#x20;
 
 {% hint style="info" %}
-The 3 letter constellation id is case sensitive, only lower case is allowed
+The 3 letter constellation ID is case sensitive, only lower case is allowed
 {% endhint %}
 
 ```typescript
