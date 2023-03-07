@@ -43,15 +43,20 @@ A full list of examples could be found in the [examples folder on GitHub](https:
 
 ## Plugin API
 
-After the client instance is created using `new AstronomyAPI().`&#x20;
+The client instance is created using `new AstronomyAPI({....}).` The parameter `basicToken` is required to initiate the class.
 
-All methods follow the same payload body as the moon phase or star chart API with an optional parameter element which can be used to attach a custom HTML element instead of the default element.
+All methods follow the same payload body as the [moon phase](studio/moon-phase.md) or [star chart](studio/star-chart.md) API with an optional parameter `element` which can be used to attach a custom HTML element instead of the default element selector.
 
-A callback can be passed as the second parameter for each method. The callback function will receive the original response received from the API.
+```
+client.moonPhase({..options}, (response) => {})
+client.starChart({..options}, (response) => {})
+```
+
+A callback function can be passed as the second parameter for each method. The callback function will be passed with the original response received from the API.
 
 ```javascript
   var client = new AstronomyAPI({
-          basicToken: "<hash>",
+          basicToken: "<hash>", // required
         });
 
         client.moonPhase(
