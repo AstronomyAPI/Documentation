@@ -4,6 +4,8 @@ description: Generates a star chart with the given parameters, and returns the u
 
 # ✨ Star Chart
 
+If you're looking to quickly integrate this feature on your website without making API calls, checkout [Widgets](../../widgets.md)
+
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" method="post" summary="Generate star chart" %}
 {% swagger-description %}
 

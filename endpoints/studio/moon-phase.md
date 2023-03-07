@@ -4,6 +4,8 @@ description: Generate an image of the Moon based on the given parameters.
 
 # 🌒 Moon Phase
 
+If you're looking to quickly integrate this feature on your website without making API calls, checkout [Widgets](../../widgets.md)
+
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/moon-phase" method="post" summary="Generate Moon Phase" %}
 {% swagger-description %}
 
