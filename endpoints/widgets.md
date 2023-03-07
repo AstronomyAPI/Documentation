@@ -43,7 +43,7 @@ A full list of examples could be found in the [examples folder on GitHub](https:
 
 ## Plugin API
 
-The client instance is created using `new AstronomyAPI({...options}).` The parameter `basicToken` is required to initiate the class.
+The client instance is created using `new AstronomyAPI({...options})`. The parameter `basicToken` is required to initiate the class.
 
 All methods follow the same payload body as the [moon phase](studio/moon-phase.md) or [star chart](studio/star-chart.md) API with an optional parameter `element` which can be used to attach a custom HTML element instead of the default element selector.
 
