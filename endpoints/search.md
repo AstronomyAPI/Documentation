@@ -7,7 +7,7 @@ layout: editorial
 
 Search endpoint can be used to get information for stars and deep space objects.
 
-The response of this endpoint is an array of objects which is representing the results. Depending on the matching criteria, the resulting items could be of object type star or a deep space object.
+The response of this endpoint is an array of objects which is representing the results. Depending on the matching criteria, the resulting items could be of object type `star` or a `deep space object`.
 
 See [body-properties-1.md](../requests-and-response/body-properties-1.md "mention") for information on response object details.
 
