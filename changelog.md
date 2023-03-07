@@ -1,5 +1,11 @@
 # 📕 Changelog
 
+## 2.13.2 - 2023-03-05
+
+### Add
+
+* Adding Studio Widgets
+
 ## 2.11.0 - 2022-12-31
 
 ### Add
