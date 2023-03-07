@@ -9,7 +9,6 @@
   * [✨ Star Chart](endpoints/studio/star-chart.md)
   * [🌒 Moon Phase](endpoints/studio/moon-phase.md)
 * [🔎 Search](endpoints/search.md)
-* [🧩 Widgets](endpoints/widgets.md)
 
 ***
 
@@ -20,6 +19,7 @@
   * [🗓 Tabular Responses](requests-and-response/tabular-responses.md)
   * [🔢 Rows Responses](requests-and-response/tabular-responses-1.md)
   * [🚩 Error Responses](requests-and-response/error-responses.md)
+* [🧩 Widgets](widgets.md)
 * [⚠ Known Issues](known-issues.md)
 * [📕 Changelog](changelog.md)
 

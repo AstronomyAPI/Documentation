@@ -4,5 +4,5 @@ description: >-
   you provide.
 ---
 
-# Studio
+# 📸 Studio
 

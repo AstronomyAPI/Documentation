@@ -8,7 +8,7 @@ Need to integrate any of the studio endpoints on your website quickly? You might
 
 ## Bare minimum
 
-Widgets script can be loaded to your webpage by including a script tag inside the `<HEAD></HEAD>` tags, as shown below. Make sure to update the \<hash> with the base64 hash you created as mentioned in the [authentication instructions](../#basic-authentication).
+Widgets script can be loaded to your webpage by including a script tag inside the `<HEAD></HEAD>` tags, as shown below. Make sure to update the \<hash> with the base64 hash you created as mentioned in the [authentication instructions](./#basic-authentication).
 
 {% code overflow="wrap" %}
 ```javascript
@@ -45,7 +45,7 @@ A full list of examples could be found in the [examples folder on GitHub](https:
 
 The client instance is created using `new AstronomyAPI({...options})`. The parameter `basicToken` is required to initiate the class.
 
-All methods follow the same payload body as the [moon phase](studio/moon-phase.md) or [star chart](studio/star-chart.md) API with an optional parameter `element` which can be used to attach a custom HTML element instead of the default element selector.
+All methods follow the same payload body as the [moon phase](endpoints/studio/moon-phase.md) or [star chart](endpoints/studio/star-chart.md) API with an optional parameter `element` which can be used to attach a custom HTML element instead of the default element selector.
 
 ```
 client.moonPhase({..options}, (response) => {})
