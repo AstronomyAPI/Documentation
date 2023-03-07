@@ -2,9 +2,9 @@
 description: Some endpoints return data as rows for easy rendering data as a list.
 ---
 
-# 🔢 Row Responses
+# 🔢 Rows Responses
 
-Certain API endpoints might return data as a list, so it's easier for you to render them in your template files.
+Certain API endpoints might return data as rows, so it's easier for you to render them in your template files.
 
 You can get the `rows` array from the response object using `data.rows`.
 
