@@ -9,6 +9,7 @@
   * [✨ Star Chart](endpoints/studio/star-chart.md)
   * [🌒 Moon Phase](endpoints/studio/moon-phase.md)
 * [🔎 Search](endpoints/search.md)
+* [🧩 Widgets](endpoints/widgets.md)
 
 ***
 
