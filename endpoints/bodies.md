@@ -64,11 +64,11 @@ Elevation from the sea in Meters
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="from_date" type="string" required="true" %}
-Starting date as Date. 
+Starting date as Date.  The maximum number of days you can query is 366 days.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="to_date" type="string" required="true" %}
-Ending date as Date
+Ending date as Date. The maximum number of days you can query is 366 days.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="time" type="string" required="true" %}
@@ -1046,11 +1046,11 @@ Elevation from the sea in Meters
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="from_date" type="string" required="true" %}
-Starting date as Date.
+Starting date as Date. The maximum number of days you can query is 366 days.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="to_date" type="string" required="true" %}
-Ending date as Date
+Ending date as Date. The maximum number of days you can query is 366 days.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="time" type="string" required="true" %}
