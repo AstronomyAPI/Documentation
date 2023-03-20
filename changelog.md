@@ -2,9 +2,10 @@
 
 ## 2.14.0 - 2023-03-20
 
-### Add
+### Update
 
-* Date range restriction of maximum of 366 days added for positions endpoint.
+* Infrastructure update
+* Date range restriction of a maximum of 366 days added for positions endpoint.
 
 ## 2.13.2 - 2023-03-05
 
