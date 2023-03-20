@@ -1,5 +1,11 @@
 # 📕 Changelog
 
+## 2.14.0 - 2023-03-20
+
+### Add
+
+* Date range restriction of maximum of 366 days added for positions endpoint.
+
 ## 2.13.2 - 2023-03-05
 
 ### Add
