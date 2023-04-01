@@ -8,7 +8,7 @@ Need to integrate any of the studio endpoints on your website quickly? You might
 
 ## Bare minimum
 
-Widgets script can be loaded to your webpage by including a script tag inside the `<HEAD></HEAD>` tags, as shown below. Make sure to update the \<hash> with the base64 hash you created as mentioned in the [authentication instructions](./#basic-authentication).
+Widgets script can be loaded to your webpage by including a script tag inside the `<HEAD></HEAD>` tags, as shown below. Make sure to update the `yourEncryptedAuthString` with the base64 string you created as mentioned in the [authentication instructions](./#basic-authentication). Notice how the string should not include the term `Basic`.
 
 {% code overflow="wrap" %}
 ```javascript
@@ -24,7 +24,7 @@ Widgets script can be loaded to your webpage by including a script tag inside th
     <script>
        document.addEventListener("DOMContentLoaded", function () {
         var client = new AstronomyAPI({
-          basicToken: "<hash>",
+          basicToken: "yourEncryptedAuthString",
         });
 
         client.moonPhase();
@@ -56,7 +56,7 @@ A callback function can be passed as the second parameter for each method. The c
 
 ```javascript
   var client = new AstronomyAPI({
-          basicToken: "<hash>", // required
+          basicToken: "yourEncryptedAuthString", // required
         });
 
         client.moonPhase(
@@ -88,7 +88,7 @@ A callback function can be passed as the second parameter for each method. The c
 
 ```javascript
 var client = new AstronomyAPI({
-          basicToken: "<hash>",
+          basicToken: "yourEncryptedAuthString",
         });
 
         client.starChart(

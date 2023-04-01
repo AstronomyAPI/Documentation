@@ -20,33 +20,35 @@ Be sure to set the `Origin` to the domain of the website when creating an applic
 
 ## Basic Authentication
 
-When making API calls to endpoints which require authentication, you must use the credentials obtained above to create a hash. The algorithm to create the hash is very simple. Below are implementations on several commonly used languages.
+When making API calls to endpoints requiring authentication, you must use the above credentials to create a string that must be used as the authentication string. The algorithm to create the string is very simple. Below are implementations of several commonly used languages.
 
 #### JS
 
 ```typescript
-const hash = btoa(`${applicationId}:${applicationSecret}`);
+const authString = btoa(`${applicationId}:${applicationSecret}`);
 ```
 
 #### PHP
 
 ```php
-$hash = base64_encode("$applicationId:$applicationSecret");
+$authString = base64_encode("$applicationId:$applicationSecret");
 ```
 
-The generated hash must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
+The encrypted string must be provided in the API request's `Authorization` header, after the term `Basic` followed by a space.
 
 ```markup
-"Authorization: Basic <hash>"
+"Authorization: Basic YourAuthString"
 ```
 
-In an event of an authentication failure, a `403 Forbidden` response will be returned to you. Successful requests always respond an HTTP code `200`.
+In an event of an authentication failure, a `403 Forbidden` response will be returned, which probably means you encrypted the string incorrectly, or your credentials are wrong.
+
+Successful requests always respond with HTTP code `200`.
 
 ### Sample curl request
 
 ```bash
 curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies' 
-\ --header 'Authorization: Basic <hash>' 
+\ --header 'Authorization: Basic <authString>' 
 ```
 
 For code samples and demos go to [demo.astronomyapi.com](http://demo.astronomyapi.com)
