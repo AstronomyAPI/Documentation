@@ -52,3 +52,5 @@ curl --location --request GET 'https://api.astronomyapi.com/api/v2/bodies'
 ```
 
 For code samples and demos go to [demo.astronomyapi.com](http://demo.astronomyapi.com)
+
+Need help with something? or noticed a bug? [Please create a ticket on Github](https://github.com/AstronomyAPI/Samples/issues)
