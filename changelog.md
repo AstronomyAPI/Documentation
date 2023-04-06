@@ -1,5 +1,11 @@
 # 📕 Changelog
 
+## 2.14.2 - 2023-04-06
+
+### Update
+
+* Upgrade caching
+
 ## 2.14.0 - 2023-03-20
 
 ### Update
