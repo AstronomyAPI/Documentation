@@ -11,7 +11,7 @@ The response of this endpoint is an array of objects which is representing the r
 
 See [body-properties-1.md](../requests-and-response/body-properties-1.md "mention") for information on response object details.
 
-{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/search" method="get" summary="Get available bodies" %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/search" method="get" summary="Get available bodies" expanded="true" %}
 {% swagger-description %}
 Returns a list of results based on the requested query
 {% endswagger-description %}
@@ -143,3 +143,17 @@ Order the results by the field. The supported value is
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+### Object types and sub types
+
+Search API can only be used for searching for stars and deep space objects. For searching for planets use the [positions API](bodies.md) instead.
+
+#### Object catalogs
+
+The following object catalogs are available for searching. Please note all objects may not be present in the database for some catalogs.
+
+|   |   |   |
+| - | - | - |
+|   |   |   |
+|   |   |   |
+|   |   |   |
