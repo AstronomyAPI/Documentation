@@ -146,7 +146,7 @@ Order the results by the field. The supported value is
 
 ### Object types and sub types
 
-Search API can only be used for searching for stars and deep space objects. For searching for planets use the [positions API](bodies.md) instead.
+Search API can only be used for searching stars and deep space objects. For searching for planets use the [positions API](bodies.md) instead.
 
 ### Object catalogs
 
