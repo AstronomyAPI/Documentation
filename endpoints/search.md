@@ -11,37 +11,37 @@ The response of this endpoint is an array of objects which is representing the r
 
 See [body-properties-1.md](../requests-and-response/body-properties-1.md "mention") for information on response object details.
 
-{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/search" method="get" summary="Get available bodies" expanded="true" %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/search" method="get" summary="Get available bodies" %}
 {% swagger-description %}
 Returns a list of results based on the requested query
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Basic <hash>
+Basic
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="term" type="string" required="true" %}
-Search term. Conditionally required if 
+Search term. Conditionally required if
 
 `ra`
 
- and 
+and
 
 `dec`
 
- values are not provided for area search.
+values are not provided for area search.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="match_type" type="string" required="true" %}
-Matching algorithm. Valid values are 
+Matching algorithm. Valid values are
 
 `fuzzy`
 
- or 
+or
 
 `exact`
 
-. A fuzzy match will return results starting with the given term while an exact match will exactly match the term. Defaults to 
+. A fuzzy match will return results starting with the given term while an exact match will exactly match the term. Defaults to
 
 `fuzzy`
 
@@ -49,38 +49,38 @@ Matching algorithm. Valid values are
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="ra" type="string" required="true" %}
-Right ascension value to search around. Must be a decimal value as a string representation. Required if 
+Right ascension value to search around. Must be a decimal value as a string representation. Required if
 
 `dec`
 
- value is provided.
+value is provided.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="dec" type="string" required="true" %}
-Declination value to search around. Must be a decimal value as a string representation. Required if 
+Declination value to search around. Must be a decimal value as a string representation. Required if
 
 `ra`
 
- value is provided.
+value is provided.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="limit" type="string" %}
+{% swagger-parameter in="query" name="limit" type="string" required="false" %}
 How many records to return in the request.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="offset" type="string" %}
+{% swagger-parameter in="query" name="offset" type="string" required="false" %}
 Use offset to paginate the results. 0 will return the first page, adding the limit to the offset will return the next page.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="order_by" type="string" %}
-Order the results by the field. The supported value is 
+{% swagger-parameter in="query" name="order_by" type="string" required="false" %}
+Order the results by the field. The supported value is
 
 `name`
 
 . Does not support during an area search.
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="The response with the term as "orion"" %}
+{% swagger-response status="200: OK" description="The response with the term as " %}
 ```javascript
 {
     "meta": {
@@ -148,12 +148,12 @@ Order the results by the field. The supported value is
 
 Search API can only be used for searching for stars and deep space objects. For searching for planets use the [positions API](bodies.md) instead.
 
-#### Object catalogs
+### Object catalogs
 
 The following object catalogs are available for searching. Please note all objects may not be present in the database for some catalogs.
 
 | ID  | Name                                             |
-|-----|--------------------------------------------------|
+| --- | ------------------------------------------------ |
 | LBN | Lynds' Catalogue of Bright Nebulae               |
 | NGC | The New General Catalogue                        |
 | HCG | A Hickson Compact Group                          |
