@@ -152,8 +152,18 @@ Search API can only be used for searching for stars and deep space objects. For 
 
 The following object catalogs are available for searching. Please note all objects may not be present in the database for some catalogs.
 
-|   |   |   |
-| - | - | - |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| ID  | Name                                             |
+|-----|--------------------------------------------------|
+| LBN | Lynds' Catalogue of Bright Nebulae               |
+| NGC | The New General Catalogue                        |
+| HCG | A Hickson Compact Group                          |
+| ZWG | The Catalog of Galaxies and Clusters of Galaxies |
+| HR  | Revised Harvard Photometry                       |
+| IC  | Index Catalogues                                 |
+| UGC | The Uppsala General Catalogue of Galaxies        |
+| KUG | The Kiso Ultraviolet Galaxy Catalog              |
+| FCC | A catalog and photometric properties of galaxies |
+| DDO | David Dunlap Observatory Catalogue               |
+| ARP | The Atlas of Peculiar Galaxies                   |
+| MCG | Morphological Catalogue of Galaxies              |
+| ESO | The European Southern Observatory Catalog        |
