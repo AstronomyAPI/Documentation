@@ -6,7 +6,7 @@ description: >-
 
 # 🪐 Bodies
 
-Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests are will require you to submit [observer-parameters.md](../requests-and-response/observer-parameters.md "mention") as query parameters.
+Bodies API could be used to get information about the planets, the sun and the moon. Most endpoints are GET requests and will require you to submit [observer-parameters.md](../requests-and-response/observer-parameters.md "mention") as query parameters.
 
 See [body-properties.md](../requests-and-response/body-properties.md "mention") for available properties for bodies.
 
@@ -44,7 +44,7 @@ Basic <hash>
 
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/bodies/positions" method="get" summary="Get all bodies positions" %}
 {% swagger-description %}
-Returns a iterable list of bodies and their properties in tabular format. 
+Returns an iterable list of bodies and their properties in tabular format. 
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
