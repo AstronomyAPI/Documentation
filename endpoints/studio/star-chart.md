@@ -1,54 +1,30 @@
 ---
-description: Generates a star chart with the given parameters, and returns the url
+description: Generates a star chart with the given parameters, and returns the url.
 ---
 
 # ✨ Star Chart
 
 If you're looking to quickly integrate this feature on your website without making API calls, checkout [Widgets](../../widgets.md)
 
-{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" method="post" summary="Generate star chart" %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/star-chart" method="post" summary="Generate star chart" expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Basic <hash>
+Basic \<hash>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="style" type="string" required="false" %}
-Style of the map to be generated. If not provided will use the default style. To see a demo of available styles see styles section on this page. 
+Style of the map to be generated. If not provided will use the default style. To see a demo of available styles see styles section on this page.&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="observer" type="object" required="true" %}
-Observer object must contain the 
-
-`latitude`
-
-, 
-
-`longitude`
-
- and 
-
-`date`
-
- of the observer.
+Observer object must contain the `latitude`, `longitude` and `date` of the observer.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="view" type="object" required="true" %}
-View object is used to configure the view of the rendered image. The view object must contain a 
-
-`type`
-
- and 
-
-`parameters`
-
- object. Parameters object can vary based on the 
-
-`type`
-
-.
+View object is used to configure the view of the rendered image. The view object must contain a `type` and `parameters` object. Parameters object can vary based on the `type`.
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -66,7 +42,7 @@ View object is used to configure the view of the rendered image. The view object
 
 #### Constellation
 
-To generate an image of a constellation the `type` in the `view` object must be set to `constellation`. The 3 letter ID of the constellation must be passed in the parameters for the view object. For a complete list of constellation IDs see&#x20;
+To generate an image of a constellation the `type` in the `view` object must be set to `constellation`. The 3 letter ID of the constellation must be passed in the parameters for the view object. For a complete list of constellation IDs see [Contellation Enums](../../requests-and-response/constellation-enums.md)
 
 {% hint style="info" %}
 The 3 letter constellation ID is case sensitive, only lower case is allowed

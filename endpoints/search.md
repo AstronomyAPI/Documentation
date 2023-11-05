@@ -9,7 +9,7 @@ Search endpoint can be used to get information for stars and deep space objects.
 
 The response of this endpoint is an array of objects which is representing the results. Depending on the matching criteria, the resulting items could be of object type `star` or a `deep space object`.
 
-See [body-properties-1.md](../requests-and-response/body-properties-1.md "mention") for information on response object details.
+See [Search Result Properties](../requests-and-response/body-properties-1.md) for information on response object details.
 
 {% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/search" method="get" summary="Get available bodies" %}
 {% swagger-description %}
@@ -146,24 +146,10 @@ Order the results by the field. The supported value is
 
 ### Object types and sub types
 
-Search API can only be used for searching stars and deep space objects. For searching for planets use the [positions API](bodies.md) instead.
+Search API can only be used for searching stars and deep space objects. For searching for planets use the [positions API](bodies/) instead. For a list of DOS types see [DSO enums](../requests-and-response/dso-enums.md)
 
 ### Object catalogs
 
 The following object catalogs are available for searching. Please note all objects may not be present in the database for some catalogs.
 
-| ID  | Name                                               |
-| --- | -------------------------------------------------- |
-| LBN | Lynds' Catalogue of Bright Nebulae                 |
-| NGC | The New General Catalogue                          |
-| HCG | A Hickson Compact Group                            |
-| ZWG | The Catalogue of Galaxies and Clusters of Galaxies |
-| HR  | Revised Harvard Photometry                         |
-| IC  | Index Catalogue                                    |
-| UGC | The Uppsala General Catalogue of Galaxies          |
-| KUG | The Kiso Ultraviolet Galaxy Catalogue              |
-| FCC | A Catalogue and Photometric Properties of Galaxies |
-| DDO | David Dunlap Observatory Catalogue                 |
-| ARP | The Atlas of Peculiar Galaxies                     |
-| MCG | Morphological Catalogue of Galaxies                |
-| ESO | The European Southern Observatory Catalogue        |
+<table><thead><tr><th width="95">ID</th><th>Name</th></tr></thead><tbody><tr><td>LBN</td><td>Lynds' Catalogue of Bright Nebulae</td></tr><tr><td>NGC</td><td>The New General Catalogue</td></tr><tr><td>HCG</td><td>A Hickson Compact Group</td></tr><tr><td>ZWG</td><td>The Catalogue of Galaxies and Clusters of Galaxies</td></tr><tr><td>HR</td><td>Revised Harvard Photometry</td></tr><tr><td>IC</td><td>Index Catalogue</td></tr><tr><td>UGC</td><td>The Uppsala General Catalogue of Galaxies</td></tr><tr><td>KUG</td><td>The Kiso Ultraviolet Galaxy Catalogue</td></tr><tr><td>FCC</td><td>A Catalogue and Photometric Properties of Galaxies</td></tr><tr><td>DDO</td><td>David Dunlap Observatory Catalogue</td></tr><tr><td>ARP</td><td>The Atlas of Peculiar Galaxies</td></tr><tr><td>MCG</td><td>Morphological Catalogue of Galaxies</td></tr><tr><td>ESO</td><td>The European Southern Observatory Catalogue</td></tr></tbody></table>

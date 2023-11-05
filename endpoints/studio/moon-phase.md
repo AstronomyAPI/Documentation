@@ -6,27 +6,17 @@ description: Generate an image of the Moon based on the given parameters.
 
 If you're looking to quickly integrate this feature on your website without making API calls, checkout [Widgets](../../widgets.md)
 
-{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/moon-phase" method="post" summary="Generate Moon Phase" %}
+{% swagger baseUrl="https://api.astronomyapi.com" path="/api/v2/studio/moon-phase" method="post" summary="Generate Moon Phase" expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Basic <hash>
+Basic \<hash>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="format" type="string" required="false" %}
-Image format to be returned. Valid values are 
-
-`png`
-
- or 
-
-`svg`
-
-. Defaults to 
-
-`png`
+Image format to be returned. Valid values are `png` or `svg`. Defaults to `png`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="style" type="object" %}
@@ -34,19 +24,7 @@ Style object contains the styling parameters for the image generated.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="observer" type="object" required="true" %}
-Observer object must contain the 
-
-`latitude`
-
-, 
-
-`longitude`
-
- and 
-
-`date`
-
- of the observer. 
+Observer object must contain the `latitude`, `longitude` and `date` of the observer.&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="view" type="object" required="true" %}
@@ -100,11 +78,23 @@ The API currently supports outputting images in `svg` and `png` formats. These c
 
 Valid values are `default`, `sketch` and `shaded.` Below are sample moons for each value.
 
-![default](../../.gitbook/assets/moon.285d.png)
+<div align="left">
 
-![shaded](../../.gitbook/assets/moon.285s.png)
+<img src="../../.gitbook/assets/moon.285d.png" alt="default">
 
-![sketch](../../.gitbook/assets/moon.285k.png)
+</div>
+
+<div align="left">
+
+<img src="../../.gitbook/assets/moon.285s.png" alt="shaded">
+
+</div>
+
+<div align="left">
+
+<img src="../../.gitbook/assets/moon.285k.png" alt="sketch">
+
+</div>
 
 #### `backgroundStyle`
 
@@ -112,7 +102,7 @@ Background style supports the values either `stars` or `solid`. Passing `stars` 
 
 #### `backgroundColor, headingColor and textColor`
 
-These properties could be used to customize the image further. Colors could be defined as hex or as any of the 140 html color names.
+These properties could be used to customise the image further. Colours could be defined as hex or as any of the [140 html colour names](https://www.w3schools.com/tags/ref\_colornames.asp).
 
 ## View
 
@@ -120,9 +110,17 @@ These properties could be used to customize the image further. Colors could be d
 
 The type parameter in the view object should specify which template to be used when rendering the image. Currently two templates are available.
 
-![portrait-simple](../../.gitbook/assets/e86043757e0a337db6d529d42e6c67e9e832b104f75d92bf9e6a09fc4d44cc25.png)
+<div align="left">
 
-![landscape-simple](../../.gitbook/assets/f2968861e774a453f7826a48bb0c1f41c22693a3b58475cbec0435e97171d8e2.png)
+<img src="../../.gitbook/assets/e86043757e0a337db6d529d42e6c67e9e832b104f75d92bf9e6a09fc4d44cc25.png" alt="portrait-simple">
+
+</div>
+
+<div align="left">
+
+<img src="../../.gitbook/assets/f2968861e774a453f7826a48bb0c1f41c22693a3b58475cbec0435e97171d8e2.png" alt="landscape-simple">
+
+</div>
 
 #### `orientation`
 
@@ -130,6 +128,14 @@ Orientation parameter in the view object, determines which orientation to use wh
 
 Below is an example of the same image with different orientations.
 
-![north-up](../../.gitbook/assets/33574d6b80418fce7f3cb4ba97e09ea0f460f7780b6a3367dda5e58643896230.png)
+<div align="left">
 
-![south-up](../../.gitbook/assets/0b12c46d2b33d72b4f848cd40d878221e57689ab2880d104d615721912dd5593.png)
+<img src="../../.gitbook/assets/33574d6b80418fce7f3cb4ba97e09ea0f460f7780b6a3367dda5e58643896230.png" alt="north-up">
+
+</div>
+
+<div align="left">
+
+<img src="../../.gitbook/assets/0b12c46d2b33d72b4f848cd40d878221e57689ab2880d104d615721912dd5593.png" alt="south-up">
+
+</div>

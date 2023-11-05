@@ -6,21 +6,9 @@ description: >-
 
 # 🪐 Body Properties
 
-Body entities returned from the API consists of the following properties.
+Body entities returned from the [Positions API](../endpoints/bodies/positions.md) consists of the following properties.
 
-| **Section** | **Subsection** | **Data Type** | **Description**                                                                                                                                                         |
-| ----------- | -------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id          | -              | string        | Unique identifier for the body                                                                                                                                          |
-| name        | -              | string        | User friendly name for the body                                                                                                                                         |
-| distance    | -              | object        | Distance object                                                                                                                                                         |
-| -           | fromEarth      | object        | Distance from Earth in Kilometers (km) and Astronomical units (au)                                                                                                      |
-| position    | -              | object        | Position object                                                                                                                                                         |
-| -           | horizonal      | object        | Position object in horizontal coordinates. Object will return the values in Altitude and Azimuth (Alt/Az) format. Numerical and literal values are returned.            |
-| -           | equatorial     | object        | Position object in equatorial coordinates. Object will return the values in Right Ascension and Declination (RA/Dec) format. Numerical and literal values are returned. |
-| extraInfo   | -              | object        | Other information relating to the body                                                                                                                                  |
-| -           | elongation     | string        | Angular separation between the Sun and the planet, with Earth as the reference point                                                                                    |
-| -           | magnitude      | string        | Apparent magnitude of the object                                                                                                                                        |
-|             | phase          | object        | Phase of the body as an angle and a fraction.                                                                                                                           |
+<table data-header-hidden><thead><tr><th>Section</th><th width="150">Subsection</th><th width="150">Data Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Section</strong></td><td><strong>Subsection</strong></td><td><strong>Data Type</strong></td><td><strong>Description</strong></td></tr><tr><td>id</td><td>-</td><td>string</td><td>Unique identifier for the body</td></tr><tr><td>name</td><td>-</td><td>string</td><td>User friendly name for the body</td></tr><tr><td>distance</td><td>-</td><td>object</td><td>Distance object</td></tr><tr><td>-</td><td>fromEarth</td><td>object</td><td>Distance from Earth in Kilometers (km) and Astronomical units (au)</td></tr><tr><td>position</td><td>-</td><td>object</td><td>Position object</td></tr><tr><td>-</td><td>horizonal</td><td>object</td><td>Position object in horizontal coordinates. Object will return the values in Altitude and Azimuth (Alt/Az) format. Numerical and literal values are returned.</td></tr><tr><td>-</td><td>equatorial</td><td>object</td><td>Position object in equatorial coordinates. Object will return the values in Right Ascension and Declination (RA/Dec) format. Numerical and literal values are returned.</td></tr><tr><td>extraInfo</td><td>-</td><td>object</td><td>Other information relating to the body</td></tr><tr><td>-</td><td>elongation</td><td>string</td><td>Angular separation between the Sun and the planet, with Earth as the reference point</td></tr><tr><td>-</td><td>magnitude</td><td>string</td><td>Apparent magnitude of the object</td></tr><tr><td></td><td>phase</td><td>object</td><td>Phase of the body as an angle and a fraction.</td></tr></tbody></table>
 
 {% hint style="info" %}
 `phase` property is available only in the Moon body&#x20;
@@ -67,3 +55,4 @@ Body entities returned from the API consists of the following properties.
     }
 }
 ```
+
