@@ -4,7 +4,7 @@
 
 ## API v2 Reference <a href="#endpoints" id="endpoints"></a>
 
-* [🪐 Bodies](endpoints/bodies/README.md)
+* [🪐 Bodies](endpoints/bodies.md)
   * [🌐 Positions](endpoints/bodies/positions.md)
   * [🗓 Events](endpoints/bodies/events.md)
 * [📸 Studio](endpoints/studio/README.md)

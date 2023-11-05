@@ -146,7 +146,7 @@ Order the results by the field. The supported value is
 
 ### Object types and sub types
 
-Search API can only be used for searching stars and deep space objects. For searching for planets use the [positions API](bodies/) instead. For a list of DOS types see [DSO enums](../requests-and-response/dso-enums.md)
+Search API can only be used for searching stars and deep space objects. For searching for planets use the [positions API](bodies.md) instead. For a list of DOS types see [DSO enums](../requests-and-response/dso-enums.md)
 
 ### Object catalogs
 

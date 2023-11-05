@@ -1,10 +1,10 @@
 # 📕 Changelog
 
-## 2.14.2 - 2023-04-06
+## 3.0.0 - 2023-11-05
 
-### Update
+### Add
 
-* Upgrade caching
+* Events API
 
 ## 2.14.0 - 2023-03-20
 
