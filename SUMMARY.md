@@ -2,6 +2,12 @@
 
 * [🚀 Getting Started](README.md)
 
+## API v3 Reference
+
+* [🛰 Overview](v3/README.md)
+  * [🌐 Positions](v3/positions.md)
+  * [🔀 Migrating from v2](v3/migrating-from-v2.md)
+
 ## API v2 Reference <a href="#endpoints" id="endpoints"></a>
 
 * [🪐 Bodies](endpoints/bodies.md)
