@@ -2,17 +2,17 @@
 
 * [🚀 Getting Started](README.md)
 
-## API v3 Reference
+## API v3 Reference (Draft)
 
-* [🛰 Overview](v3/README.md)
-  * [🌐 Positions](v3/positions.md)
-  * [🔀 Migrating from v2](v3/migrating-from-v2.md)
+* [🛰️ Overview](api-v3-reference-draft/v3/README.md)
+  * [🌐 Positions](api-v3-reference-draft/v3/positions.md)
+  * [🔀 Migrating from v2](api-v3-reference-draft/v3/migrating-from-v2.md)
 
 ## API v2 Reference <a href="#endpoints" id="endpoints"></a>
 
 * [🪐 Bodies](endpoints/bodies.md)
   * [🌐 Positions](endpoints/bodies/positions.md)
-  * [🗓 Events](endpoints/bodies/events.md)
+  * [🗓️ Events](endpoints/bodies/events.md)
 * [📸 Studio](endpoints/studio/README.md)
   * [✨ Star Chart](endpoints/studio/star-chart.md)
   * [🌒 Moon Phase](endpoints/studio/moon-phase.md)
@@ -25,14 +25,14 @@
   * [🕚 Event Properties](requests-and-response/event-properties.md)
   * [🔎 Search Result Properties](requests-and-response/body-properties-1.md)
   * [🔭 Observer Parameters](requests-and-response/observer-parameters.md)
-  * [🗓 Tabular Responses](requests-and-response/tabular-responses.md)
+  * [🗓️ Tabular Responses](requests-and-response/tabular-responses.md)
   * [🔢 Rows Responses](requests-and-response/tabular-responses-1.md)
   * [🚩 Error Responses](requests-and-response/error-responses.md)
   * [🔢 Constellation Enums](requests-and-response/constellation-enums.md)
   * [🔢 DSO Enums](requests-and-response/dso-enums.md)
 * [Page](page.md)
 * [🧩 Widgets](widgets.md)
-* [⚠ Known Issues](known-issues.md)
+* [⚠️ Known Issues](known-issues.md)
 * [📕 Changelog](changelog.md)
 
 ## Links
