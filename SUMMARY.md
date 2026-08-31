@@ -5,7 +5,6 @@
 ## API v3 Reference (Draft)
 
 * [🛰️ Overview](api-v3-reference-draft/v3/README.md)
-  * [🪐 Bodies](api-v3-reference-draft/v3/bodies.md)
   * [🌐 Positions](api-v3-reference-draft/v3/positions.md)
   * [🗓 Events](api-v3-reference-draft/v3/events.md)
   * [📸 Studio](api-v3-reference-draft/v3/studio.md)

@@ -122,6 +122,11 @@ The response is unchanged: `{ "data": { "imageUrl": "..." } }`.
 
 ## Bodies
 
-`earth` is no longer available from `/positions`. Seen from the Earth it is at
-zero distance and has no direction, so the numbers v2 returned for it were
-arbitrary. Requesting it returns 422.
+**`GET /bodies` is gone.** It returned a fixed list of ten identifiers that never
+change. That list is in the specification, so `bodies` is an enumerated type in
+generated clients and there is nothing to fetch. Anything that called `/bodies`
+to populate a picker can hold the list directly.
+
+**`earth` is no longer among them.** Seen from the Earth it is at zero distance
+and has no direction, so the numbers v2 returned for it were arbitrary.
+Requesting it from `/positions` returns 422.

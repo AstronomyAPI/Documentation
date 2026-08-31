@@ -76,6 +76,17 @@ Two v2 responses were wrong rather than merely awkward, and v3 fixes both.
 moon and zero at full. In v3 it is the fraction of the Moon's disc that is lit,
 from 0 at new to 1 at full.
 
+## The bodies
+
+The Sun, the Moon, and Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune
+and Pluto. The list is fixed, so v3 carries it in the specification rather than
+serving it: v2's `/bodies` endpoint spent a request to return ten constants that
+never change, and generated clients now get the ids as a type instead.
+
+`earth` is not among them. Seen from the Earth it is at zero distance and has no
+direction, so the right ascension, declination, altitude and azimuth v2 reported
+for it were whatever fell out of the arithmetic. Asking for it returns 422.
+
 ## Moving across
 
 See [Migrating from v2](migrating-from-v2.md) for a field-by-field mapping.

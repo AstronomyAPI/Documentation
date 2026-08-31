@@ -129,36 +129,6 @@ paths:
                 '422':
                     $ref: '#/components/responses/UnprocessableEntity'
 
-    /bodies:
-        get:
-            tags: [Bodies]
-            summary: The bodies this API can report on
-            operationId: getBodies
-            description: |
-                Returns the identifiers accepted by `bodies` elsewhere. v2 listed
-                `earth` here even though asking for its position gave a meaningless
-                answer; v3 does not.
-            responses:
-                '200':
-                    description: The available bodies.
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                required: [data]
-                                properties:
-                                    data:
-                                        type: array
-                                        items:
-                                            $ref: '#/components/schemas/BodyIdentity'
-                            example:
-                                data:
-                                    - { id: sun, name: Sun }
-                                    - { id: moon, name: Moon }
-                                    - { id: mercury, name: Mercury }
-                '401':
-                    $ref: '#/components/responses/Unauthorized'
-
     /events:
         get:
             tags: [Bodies]
@@ -293,15 +263,31 @@ components:
             name: bodies
             in: query
             required: false
+            style: form
+            explode: false
             description: |
                 Which bodies to report, as a comma-separated list of ids. Omit to
                 get all of them.
 
-                `earth` is not available here. Seen from the Earth it is at zero
-                distance and has no direction, so v2's answer for it was arbitrary.
+                The list is fixed and is given here in full, so there is nothing to
+                look up at runtime. v2 had a `/bodies` endpoint that returned it;
+                v3 does not, because a request to learn ten constants that never
+                change is a round trip for nothing.
+
+                `earth` is absent deliberately. Seen from the Earth it is at zero
+                distance and has no direction, so the numbers v2 returned for it
+                were whatever fell out of the arithmetic.
             schema:
-                type: string
-                examples: ['mars,venus', 'moon']
+                type: array
+                items:
+                    $ref: '#/components/schemas/BodyId'
+            examples:
+                one:
+                    summary: A single body
+                    value: [moon]
+                several:
+                    summary: Several bodies
+                    value: [mars, venus]
         Latitude:
             name: latitude
             in: query
@@ -432,13 +418,17 @@ components:
             name: bodies
             in: query
             required: false
+            style: form
+            explode: false
             description: |
-                Which bodies to report events for. Only `sun` and `moon` have any.
-                Omit for both.
+                Which bodies to report events for. Only the Sun and the Moon have
+                any. Omit for both.
             schema:
-                type: string
-                default: sun,moon
-                examples: ['moon', 'sun,moon']
+                type: array
+                default: [sun, moon]
+                items:
+                    type: string
+                    enum: [sun, moon]
         Term:
             name: term
             in: query
@@ -608,14 +598,28 @@ components:
                     items:
                         $ref: '#/components/schemas/Sample'
 
+        BodyId:
+            type: string
+            description: |
+                Stable lowercase identifier for a body. This is the complete set.
+            enum:
+                - sun
+                - moon
+                - mercury
+                - venus
+                - mars
+                - jupiter
+                - saturn
+                - uranus
+                - neptune
+                - pluto
+
         BodyIdentity:
             type: object
             required: [id, name]
             properties:
                 id:
-                    type: string
-                    description: Stable lowercase identifier.
-                    examples: [mars]
+                    $ref: '#/components/schemas/BodyId'
                 name:
                     type: string
                     description: Display name.
