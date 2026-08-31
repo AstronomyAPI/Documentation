@@ -83,6 +83,8 @@ arcseconds. Parsers that assumed a fixed width need to stop assuming it.
 | ------------------------- | ------------------- |
 | `/bodies/events/{body}`   | `/events?bodies=moon` |
 | `from_date`, `to_date`, `time` | `from`, `to`   |
+| only `sun` and `moon` accepted | any body       |
+| —                         | `types`, to pick which kinds of event |
 
 ### The response
 
@@ -98,6 +100,15 @@ arcseconds. Parsers that assumed a fixed width need to stop assuming it.
 
 v2 named the same two moments `fullStart`/`fullEnd` for lunar eclipses and
 `totalStart`/`totalEnd` for solar ones. v3 uses the `total` names for both.
+
+### Apsides are new
+
+v3 adds `type: "apsis"`, the moments a body is nearest to or farthest from the
+Earth. Every body has them and they alternate, so a response may now contain
+events with no `contacts` and no `obscuration`, carrying a `distance` instead.
+
+Anything that assumed every event was an eclipse should branch on `type`, or
+pass `types=lunar_eclipse,solar_eclipse` to ask for what v2 used to return.
 
 ## Search
 

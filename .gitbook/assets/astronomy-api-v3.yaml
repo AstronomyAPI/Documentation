@@ -132,19 +132,27 @@ paths:
     /events:
         get:
             tags: [Bodies]
-            summary: Eclipses visible from the observer's location
+            summary: Eclipses and apsides for the observer's location
             operationId: getEvents
             description: |
-                Returns the eclipses falling between `from` and `to`, as seen from
-                the observer's location, with the altitude of the body at each
-                contact so that it is clear how much of the event is above the
-                horizon.
+                Returns the events falling between `from` and `to`, as seen from the
+                observer's location.
 
-                Only the Sun and the Moon have events. Solar eclipses are reported
-                as the observer sees them, so the same eclipse is total in one place
-                and partial in another.
+                **Eclipses** are reported for the Sun and the Moon, with the
+                altitude of the body at each contact so that it is clear how much of
+                the event happens above the horizon. A solar eclipse is reported as
+                this observer sees it, so the same eclipse is total from one place
+                and partial from another.
+
+                **Apsides** are reported for every body: the moments its distance
+                from the Earth stops changing direction. They alternate between
+                perigee and apogee. For a planet the perigee is when it appears
+                largest and brightest, falling within days of opposition.
+
+                v2 offered only eclipses, and only for the Sun and the Moon.
             parameters:
                 - $ref: '#/components/parameters/EventBodies'
+                - $ref: '#/components/parameters/EventTypes'
                 - $ref: '#/components/parameters/Latitude'
                 - $ref: '#/components/parameters/Longitude'
                 - $ref: '#/components/parameters/Elevation'
@@ -421,14 +429,30 @@ components:
             style: form
             explode: false
             description: |
-                Which bodies to report events for. Only the Sun and the Moon have
-                any. Omit for both.
+                Which bodies to report events for. Omit for all of them.
+
+                v2 accepted only the Sun and the Moon here, because eclipses were
+                the only events it knew about. Every body has apsides, so v3
+                accepts the full list.
             schema:
                 type: array
-                default: [sun, moon]
+                items:
+                    $ref: '#/components/schemas/BodyId'
+
+        EventTypes:
+            name: types
+            in: query
+            required: false
+            style: form
+            explode: false
+            description: |
+                Which kinds of event to report. Omit for all that apply to the
+                bodies asked for.
+            schema:
+                type: array
                 items:
                     type: string
-                    enum: [sun, moon]
+                    enum: [lunar_eclipse, solar_eclipse, apsis]
         Term:
             name: term
             in: query
@@ -822,14 +846,27 @@ components:
                                     $ref: '#/components/schemas/Event'
 
         Event:
+            description: |
+                An event is one of two shapes, told apart by `type`. Eclipses carry
+                the moments they pass from one stage to the next; apsides carry a
+                distance. Neither has the other's fields.
+            oneOf:
+                - $ref: '#/components/schemas/EclipseEvent'
+                - $ref: '#/components/schemas/ApsisEvent'
+            discriminator:
+                propertyName: type
+                mapping:
+                    lunar_eclipse: '#/components/schemas/EclipseEvent'
+                    solar_eclipse: '#/components/schemas/EclipseEvent'
+                    apsis: '#/components/schemas/ApsisEvent'
+
+        EclipseEvent:
             type: object
-            required: [type, kind, peak, contacts, obscuration]
+            required: [type, kind, time, contacts, obscuration]
             properties:
                 type:
                     type: string
                     description: |
-                        What kind of event this is.
-
                         v2 combined this with `kind` into a single string such as
                         `partial_lunar_eclipse`, which had to be taken apart before
                         either half could be used.
@@ -841,8 +878,13 @@ components:
                         `penumbral` occurs only for lunar eclipses and `annular`
                         only for solar ones.
                     enum: [penumbral, partial, annular, total]
-                peak:
-                    $ref: '#/components/schemas/Contact'
+                time:
+                    type: string
+                    format: date-time
+                    description: The peak of the eclipse.
+                altitude:
+                    type: number
+                    description: Degrees above the horizon at peak.
                 contacts:
                     $ref: '#/components/schemas/Contacts'
                 obscuration:
@@ -858,6 +900,35 @@ components:
                     type: string
                     format: date-time
                     description: When the body set on the day of the event.
+
+        ApsisEvent:
+            type: object
+            description: |
+                The moment a body's distance from the Earth stops changing
+                direction. Every body has these, and they alternate.
+
+                For the Moon they are the familiar perigee and apogee. For a planet
+                the perigee falls within days of opposition, or of inferior
+                conjunction for Mercury and Venus, and is when it appears largest
+                and brightest. The Sun's perigee is the Earth's own perihelion, in
+                early January.
+            required: [type, kind, time, distance]
+            properties:
+                type:
+                    type: string
+                    enum: [apsis]
+                kind:
+                    type: string
+                    enum: [perigee, apogee]
+                    description: Nearest to the Earth, or farthest from it.
+                time:
+                    type: string
+                    format: date-time
+                altitude:
+                    type: number
+                    description: Degrees above the horizon at that moment.
+                distance:
+                    $ref: '#/components/schemas/Distance'
 
         Contacts:
             type: object
