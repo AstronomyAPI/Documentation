@@ -40,6 +40,10 @@ security:
 tags:
     - name: Bodies
       description: Where the Sun, the Moon and the planets are, and what they look like.
+    - name: Search
+      description: The catalogue of deep sky objects and stars.
+    - name: Studio
+      description: Rendered images of the sky.
 
 paths:
     /positions:
@@ -124,6 +128,155 @@ paths:
                     $ref: '#/components/responses/Unauthorized'
                 '422':
                     $ref: '#/components/responses/UnprocessableEntity'
+
+    /bodies:
+        get:
+            tags: [Bodies]
+            summary: The bodies this API can report on
+            operationId: getBodies
+            description: |
+                Returns the identifiers accepted by `bodies` elsewhere. v2 listed
+                `earth` here even though asking for its position gave a meaningless
+                answer; v3 does not.
+            responses:
+                '200':
+                    description: The available bodies.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                required: [data]
+                                properties:
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/BodyIdentity'
+                            example:
+                                data:
+                                    - { id: sun, name: Sun }
+                                    - { id: moon, name: Moon }
+                                    - { id: mercury, name: Mercury }
+                '401':
+                    $ref: '#/components/responses/Unauthorized'
+
+    /events:
+        get:
+            tags: [Bodies]
+            summary: Eclipses visible from the observer's location
+            operationId: getEvents
+            description: |
+                Returns the eclipses falling between `from` and `to`, as seen from
+                the observer's location, with the altitude of the body at each
+                contact so that it is clear how much of the event is above the
+                horizon.
+
+                Only the Sun and the Moon have events. Solar eclipses are reported
+                as the observer sees them, so the same eclipse is total in one place
+                and partial in another.
+            parameters:
+                - $ref: '#/components/parameters/EventBodies'
+                - $ref: '#/components/parameters/Latitude'
+                - $ref: '#/components/parameters/Longitude'
+                - $ref: '#/components/parameters/Elevation'
+                - $ref: '#/components/parameters/From'
+                - $ref: '#/components/parameters/To'
+                - $ref: '#/components/parameters/Timezone'
+            responses:
+                '200':
+                    description: Events for each requested body.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/EventsResponse'
+                '400':
+                    $ref: '#/components/responses/BadRequest'
+                '401':
+                    $ref: '#/components/responses/Unauthorized'
+                '422':
+                    $ref: '#/components/responses/UnprocessableEntity'
+
+    /search:
+        get:
+            tags: [Search]
+            summary: Find deep sky objects and stars
+            operationId: search
+            description: |
+                Searches the catalogue either by name or by position. Give `term` to
+                search by name, or `rightAscension` and `declination` together to
+                search by position. The two are mutually exclusive.
+            parameters:
+                - $ref: '#/components/parameters/Term'
+                - $ref: '#/components/parameters/MatchType'
+                - $ref: '#/components/parameters/OrderBy'
+                - $ref: '#/components/parameters/SearchRightAscension'
+                - $ref: '#/components/parameters/SearchDeclination'
+                - $ref: '#/components/parameters/SearchLimit'
+                - $ref: '#/components/parameters/Offset'
+            responses:
+                '200':
+                    description: Matching objects.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SearchResponse'
+                '400':
+                    $ref: '#/components/responses/BadRequest'
+                '401':
+                    $ref: '#/components/responses/Unauthorized'
+                '422':
+                    $ref: '#/components/responses/UnprocessableEntity'
+
+    /studio/star-chart:
+        post:
+            tags: [Studio]
+            summary: Render a star chart
+            operationId: createStarChart
+            description: |
+                Renders a chart of the sky as seen from the observer's location at a
+                given instant, and returns a URL to the image.
+
+                The chart can be framed either on a point in the sky, with a zoom
+                level, or on a named constellation.
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/StarChartRequest'
+            responses:
+                '200':
+                    $ref: '#/components/responses/Image'
+                '400':
+                    $ref: '#/components/responses/BadRequest'
+                '401':
+                    $ref: '#/components/responses/Unauthorized'
+                '422':
+                    $ref: '#/components/responses/UnprocessableEntity'
+
+    /studio/moon-phase:
+        post:
+            tags: [Studio]
+            summary: Render the Moon's phase
+            operationId: createMoonPhase
+            description: |
+                Renders the Moon as it appears from the observer's location at a
+                given instant, and returns a URL to the image.
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/MoonPhaseRequest'
+            responses:
+                '200':
+                    $ref: '#/components/responses/Image'
+                '400':
+                    $ref: '#/components/responses/BadRequest'
+                '401':
+                    $ref: '#/components/responses/Unauthorized'
+                '422':
+                    $ref: '#/components/responses/UnprocessableEntity'
+
 
 components:
     securitySchemes:
@@ -274,6 +427,89 @@ components:
             description: Opaque cursor from `meta.sampling.nextCursor`.
             schema:
                 type: string
+
+        EventBodies:
+            name: bodies
+            in: query
+            required: false
+            description: |
+                Which bodies to report events for. Only `sun` and `moon` have any.
+                Omit for both.
+            schema:
+                type: string
+                default: sun,moon
+                examples: ['moon', 'sun,moon']
+        Term:
+            name: term
+            in: query
+            required: false
+            description: Name or catalogue designation to search for.
+            schema:
+                type: string
+                minLength: 1
+                examples: [andromeda, M31]
+        MatchType:
+            name: matchType
+            in: query
+            required: false
+            description: |
+                How `term` is matched. v2 spelled this `match_type`.
+            schema:
+                type: string
+                enum: [exact, fuzzy]
+                default: fuzzy
+        OrderBy:
+            name: orderBy
+            in: query
+            required: false
+            description: |
+                Field to sort by. v2 spelled this `order_by`.
+            schema:
+                type: string
+                enum: [name]
+        SearchRightAscension:
+            name: rightAscension
+            in: query
+            required: false
+            description: |
+                Right ascension to search near, in hours. Must be given with
+                `declination`. v2 called this `ra` and took it as a string.
+            schema:
+                type: number
+                minimum: 0
+                maximum: 24
+        SearchDeclination:
+            name: declination
+            in: query
+            required: false
+            description: |
+                Declination to search near, in degrees. Must be given with
+                `rightAscension`. v2 called this `dec` and took it as a string.
+            schema:
+                type: number
+                minimum: -90
+                maximum: 90
+        SearchLimit:
+            name: limit
+            in: query
+            required: false
+            description: |
+                Most results to return. v2 declared this as a string because query
+                parameters arrive as text; v3 declares the type it means.
+            schema:
+                type: integer
+                default: 20
+                minimum: 1
+                maximum: 100
+        Offset:
+            name: offset
+            in: query
+            required: false
+            description: Results to skip. Declared as an integer, not a string.
+            schema:
+                type: integer
+                default: 0
+                minimum: 0
 
     schemas:
         PositionsResponse:
@@ -551,7 +787,305 @@ components:
                             detail:
                                 type: string
 
+        EventsResponse:
+            type: object
+            required: [meta, data]
+            properties:
+                meta:
+                    type: object
+                    required: [observer, timezone, window]
+                    properties:
+                        observer:
+                            $ref: '#/components/schemas/Observer'
+                        timezone: { type: string }
+                        window:
+                            type: object
+                            required: [from, to]
+                            properties:
+                                from: { type: string, format: date-time }
+                                to: { type: string, format: date-time }
+                data:
+                    type: array
+                    items:
+                        type: object
+                        required: [body, events]
+                        properties:
+                            body:
+                                $ref: '#/components/schemas/BodyIdentity'
+                            events:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/Event'
+
+        Event:
+            type: object
+            required: [type, kind, peak, contacts, obscuration]
+            properties:
+                type:
+                    type: string
+                    description: |
+                        What kind of event this is.
+
+                        v2 combined this with `kind` into a single string such as
+                        `partial_lunar_eclipse`, which had to be taken apart before
+                        either half could be used.
+                    enum: [lunar_eclipse, solar_eclipse]
+                kind:
+                    type: string
+                    description: |
+                        How complete the eclipse is as seen from this location.
+                        `penumbral` occurs only for lunar eclipses and `annular`
+                        only for solar ones.
+                    enum: [penumbral, partial, annular, total]
+                peak:
+                    $ref: '#/components/schemas/Contact'
+                contacts:
+                    $ref: '#/components/schemas/Contacts'
+                obscuration:
+                    type: number
+                    minimum: 0
+                    maximum: 1
+                    description: Fraction of the body's disc covered at peak.
+                rise:
+                    type: string
+                    format: date-time
+                    description: When the body rose on the day of the event.
+                set:
+                    type: string
+                    format: date-time
+                    description: When the body set on the day of the event.
+
+        Contacts:
+            type: object
+            description: |
+                The moments the eclipse passes from one stage to the next, each with
+                the altitude of the body at that instant so it is clear how much of
+                the event is above the horizon.
+
+                v2 called this block `eventHighlights`, and named the same two
+                moments `fullStart` and `fullEnd` for lunar eclipses but
+                `totalStart` and `totalEnd` for solar ones. v3 uses the `total`
+                names throughout.
+            required: [partialStart, partialEnd]
+            properties:
+                penumbralStart:
+                    $ref: '#/components/schemas/Contact'
+                partialStart:
+                    $ref: '#/components/schemas/Contact'
+                totalStart:
+                    description: Null when the eclipse does not reach totality here.
+                    oneOf:
+                        - $ref: '#/components/schemas/Contact'
+                        - type: 'null'
+                totalEnd:
+                    oneOf:
+                        - $ref: '#/components/schemas/Contact'
+                        - type: 'null'
+                partialEnd:
+                    $ref: '#/components/schemas/Contact'
+                penumbralEnd:
+                    $ref: '#/components/schemas/Contact'
+
+        Contact:
+            type: object
+            required: [time, altitude]
+            properties:
+                time: { type: string, format: date-time }
+                altitude:
+                    type: number
+                    description: |
+                        Degrees above the horizon at that moment. Negative means the
+                        stage happens with the body below the horizon and so unseen.
+
+        SearchResponse:
+            type: object
+            required: [meta, data]
+            properties:
+                meta:
+                    type: object
+                    required: [limit, offset]
+                    properties:
+                        limit: { type: integer }
+                        offset: { type: integer }
+                        total:
+                            type: integer
+                            description: Total matches, not only those returned.
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/CatalogueObject'
+
+        CatalogueObject:
+            type: object
+            required: [id, name, type, rightAscension, declination]
+            properties:
+                id: { type: string }
+                name:
+                    type: string
+                    examples: [Andromeda Galaxy]
+                type:
+                    $ref: '#/components/schemas/NamedType'
+                subType:
+                    $ref: '#/components/schemas/NamedType'
+                crossIdentification:
+                    type: array
+                    description: The same object's designations in other catalogues.
+                    items:
+                        type: object
+                        properties:
+                            name: { type: string }
+                            catalogId: { type: string }
+                rightAscension:
+                    type: number
+                    description: |
+                        Hours, J2000. v2 nested this under
+                        `position.equatorial.rightAscension.hours` and returned it
+                        as a string.
+                declination:
+                    type: number
+                    description: Degrees, J2000.
+                formatted:
+                    type: object
+                    description: Present only with `include=formatted`.
+                    properties:
+                        rightAscension: { type: string }
+                        declination: { type: string }
+
+        NamedType:
+            type: object
+            required: [id, name]
+            properties:
+                id: { type: string }
+                name: { type: string }
+
+        StudioRequest:
+            type: object
+            description: |
+                What the studio endpoints share. `time` sits beside `observer`
+                rather than inside it as v2 had it; a moment is not a property of a
+                place.
+            required: [observer, time]
+            properties:
+                observer:
+                    $ref: '#/components/schemas/Observer'
+                time: { type: string, format: date-time }
+                format:
+                    type: string
+                    enum: [png, svg]
+                    default: png
+
+        StarChartRequest:
+            allOf:
+                - $ref: '#/components/schemas/StudioRequest'
+                - type: object
+                  required: [view]
+                  properties:
+                      style:
+                          type: string
+                          description: Named visual theme.
+                          examples: [default, red, navy, inverted]
+                      view:
+                          oneOf:
+                              - $ref: '#/components/schemas/AreaView'
+                              - $ref: '#/components/schemas/ConstellationView'
+
+        AreaView:
+            type: object
+            description: A patch of sky centred on a given position.
+            required: [type, parameters]
+            properties:
+                type:
+                    type: string
+                    const: area
+                parameters:
+                    type: object
+                    required: [position]
+                    properties:
+                        zoom:
+                            type: integer
+                            minimum: 1
+                            maximum: 9
+                            default: 3
+                        position:
+                            type: object
+                            required: [rightAscension, declination]
+                            description: |
+                                v2 wrapped these in a further `equatorial` object.
+                                There is only one frame here, so v3 does not.
+                            properties:
+                                rightAscension:
+                                    type: number
+                                    minimum: 0
+                                    maximum: 24
+                                declination:
+                                    type: number
+                                    minimum: -90
+                                    maximum: 90
+
+        ConstellationView:
+            type: object
+            description: Framed on a named constellation.
+            required: [type, parameters]
+            properties:
+                type:
+                    type: string
+                    const: constellation
+                parameters:
+                    type: object
+                    required: [constellation]
+                    properties:
+                        constellation:
+                            type: string
+                            description: IAU abbreviation, lowercase.
+                            examples: [ori, and]
+
+        MoonPhaseRequest:
+            allOf:
+                - $ref: '#/components/schemas/StudioRequest'
+                - type: object
+                  required: [view]
+                  properties:
+                      view:
+                          type: object
+                          required: [type]
+                          properties:
+                              type:
+                                  type: string
+                                  examples: [portrait-simple, landscape-simple]
+                              orientation:
+                                  type: string
+                                  enum: [north-up, south-up]
+                                  default: north-up
+                      style:
+                          type: object
+                          properties:
+                              moonStyle:
+                                  type: string
+                                  enum: [sketch, default, shaded]
+                              backgroundStyle:
+                                  type: string
+                                  enum: [stars, solid]
+                              backgroundColor: { type: string }
+                              headingColor: { type: string }
+                              textColor: { type: string }
+
+        ImageResult:
+            type: object
+            required: [data]
+            properties:
+                data:
+                    type: object
+                    required: [imageUrl]
+                    properties:
+                        imageUrl: { type: string, format: uri }
+
     responses:
+        Image:
+            description: The rendered image.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/ImageResult'
         BadRequest:
             description: The request could not be parsed.
             content:

@@ -5,7 +5,11 @@
 ## API v3 Reference (Draft)
 
 * [🛰️ Overview](api-v3-reference-draft/v3/README.md)
+  * [🪐 Bodies](api-v3-reference-draft/v3/bodies.md)
   * [🌐 Positions](api-v3-reference-draft/v3/positions.md)
+  * [🗓 Events](api-v3-reference-draft/v3/events.md)
+  * [📸 Studio](api-v3-reference-draft/v3/studio.md)
+  * [🔎 Search](api-v3-reference-draft/v3/search.md)
   * [🔀 Migrating from v2](api-v3-reference-draft/v3/migrating-from-v2.md)
 
 ## API v2 Reference <a href="#endpoints" id="endpoints"></a>

@@ -75,6 +75,51 @@ arcseconds. Parsers that assumed a fixed width need to stop assuming it.
 | 422 for every validation failure                | 400 for unparseable, 422 for unacceptable |
 | No stable code                                  | `type` URI and a per-parameter `code`  |
 
+## Events
+
+### The request
+
+| v2                        | v3                  |
+| ------------------------- | ------------------- |
+| `/bodies/events/{body}`   | `/events?bodies=moon` |
+| `from_date`, `to_date`, `time` | `from`, `to`   |
+
+### The response
+
+| v2                                     | v3                        |
+| -------------------------------------- | ------------------------- |
+| `data.table.rows[].cells[]`            | `data[].events[]`         |
+| `type: "partial_lunar_eclipse"`        | `type: "lunar_eclipse"` and `kind: "partial"` |
+| `eventHighlights`                      | `contacts`                |
+| `eventHighlights.fullStart` (lunar)    | `contacts.totalStart`     |
+| `eventHighlights.fullEnd` (lunar)      | `contacts.totalEnd`       |
+| `eventHighlights.*.date`               | `contacts.*.time`         |
+| `extraInfo.obscuration`                | `obscuration`             |
+
+v2 named the same two moments `fullStart`/`fullEnd` for lunar eclipses and
+`totalStart`/`totalEnd` for solar ones. v3 uses the `total` names for both.
+
+## Search
+
+| v2                                           | v3                     |
+| -------------------------------------------- | ---------------------- |
+| `match_type`                                 | `matchType`            |
+| `order_by`                                   | `orderBy`              |
+| `ra`, `dec` (strings)                        | `rightAscension`, `declination` (numbers) |
+| `limit`, `offset` (declared as strings)      | declared as integers   |
+| `position.equatorial.rightAscension.hours`   | `rightAscension`       |
+| `position.equatorial.declination.degrees`    | `declination`          |
+
+## Studio
+
+| v2                                  | v3                          |
+| ----------------------------------- | --------------------------- |
+| `observer.date`                     | `time`, beside `observer`   |
+| observer had no `elevation`         | `observer.elevation`, optional |
+| `view.parameters.position.equatorial.rightAscension` | `view.parameters.position.rightAscension` |
+
+The response is unchanged: `{ "data": { "imageUrl": "..." } }`.
+
 ## Bodies
 
 `earth` is no longer available from `/positions`. Seen from the Earth it is at
